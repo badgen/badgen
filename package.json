@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node service.js",
-    "deploy": "now -T badgen --public"
+    "deploy": "now -T badgen --public && now -T badgen alias"
   },
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",

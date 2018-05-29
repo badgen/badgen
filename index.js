@@ -1,13 +1,13 @@
 module.exports = function ({subject, status, color = '#4C1'}) {
   const sbl = subject.length
   const stl = status.length
-  const charWidth = 7.5
+  const charWidth = 7.4
 
   const sbTextWidth = sbl * charWidth
   const sbRectWidth = sbTextWidth + 12
   const sbTextCenter = sbRectWidth / 2
 
-  const stTextWidth = stl * charWidth - 4
+  const stTextWidth = stl * charWidth
   const stRectWidth = stTextWidth + 14
   const stTextCenter = sbRectWidth + stRectWidth / 2
 
