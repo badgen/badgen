@@ -1,14 +1,14 @@
 module.exports = function ({subject, status, color = '#97CA00'}) {
   const sbl = subject.length
   const stl = status.length
-  const charWidth = 7.5
+  const charWidth = 8
 
   const sbTextWidth = sbl * charWidth
-  const sbRectWidth = sbTextWidth + 15
+  const sbRectWidth = sbTextWidth + 12
   const sbTextCenter = sbRectWidth / 2
 
-  const stTextWidth = stl * charWidth
-  const stRectWidth = stTextWidth + 15
+  const stTextWidth = stl * charWidth - 2
+  const stRectWidth = stTextWidth + 12
   const stTextCenter = sbRectWidth + stRectWidth / 2
 
   const width = sbRectWidth + stRectWidth
@@ -28,11 +28,11 @@ module.exports = function ({subject, status, color = '#97CA00'}) {
         <path fill="${color}" d="M${sbRectWidth} 0h${stRectWidth}v20H${sbRectWidth}z"/>
         <path fill="url(#b)" d="M0 0h${sbRectWidth + stRectWidth}v20H0z"/>
       </g>
-      <g fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="11">
-        <text x="${sbTextCenter}" y="14.5" textLength="${sbTextWidth}" fill="#010101" fill-opacity=".3">${subject}</text>
-        <text x="${sbTextCenter}" y="13.5" textLength="${sbTextWidth}">${subject}</text>
-        <text x="${stTextCenter}" y="14.5" textLength="${stTextWidth}" fill="#010101" fill-opacity=".3">${status}</text>
-        <text x="${stTextCenter}" y="13.5" textLength="${stTextWidth}">${status}</text>
+      <g fill="#fff" text-anchor="middle" font-family="SF Mono,Consolas,monospace" font-size="13">
+        <text x="${sbTextCenter}" y="15" textLength="${sbTextWidth}" fill="#010101" fill-opacity=".3">${subject}</text>
+        <text x="${sbTextCenter}" y="14" textLength="${sbTextWidth}">${subject}</text>
+        <text x="${stTextCenter}" y="15" textLength="${stTextWidth}" fill="#010101" fill-opacity=".3">${status}</text>
+        <text x="${stTextCenter}" y="14" textLength="${stTextWidth}">${status}</text>
       </g> <script xmlns=""/>
     </svg>
   `

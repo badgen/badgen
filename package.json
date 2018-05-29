@@ -4,7 +4,8 @@
   "description": "Hand-crafted badge generator.",
   "main": "index.js",
   "scripts": {
-    "start": "node service.js"
+    "start": "node service.js",
+    "deploy": "now -T badgen --public"
   },
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
