@@ -1,0 +1,14 @@
+{
+  "name": "badgen",
+  "version": "0.0.1",
+  "description": "Hand-crafted badge generator.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node service.js"
+  },
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "find-my-way": "^1.13.0"
+  }
+}
