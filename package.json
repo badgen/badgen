@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node service.js",
-    "predeploy": "now rm badgen --safe -T badgen",
+    "predeploy": "now rm badgen --safe -y -T badgen",
     "deploy": "now -T badgen --public && now -T badgen alias"
   },
   "author": "Amio <amio.cn@gmail.com>",
