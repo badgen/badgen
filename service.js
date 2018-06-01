@@ -1,4 +1,5 @@
 const http = require('http')
+const cors = require('@amio/micro-cors')()
 const router = require('find-my-way')()
 const badgen = require('.')
 
@@ -16,5 +17,6 @@ router.get('/badge/:subject/:status', generate)
 router.get('/badge/:subject/:status/:color', generate)
 router.get('/', serveReadme)
 
-const server = http.createServer((req, res) => router.lookup(req, res))
+const handler = cors((req, res) => router.lookup(req, res))
+const server = http.createServer(handler)
 server.listen(3000)

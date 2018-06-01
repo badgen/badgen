@@ -11,6 +11,8 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@amio/micro-cors": "0.0.6",
     "find-my-way": "^1.13.0"
-  }
+  },
+  "dependencies": {}
 }

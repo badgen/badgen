@@ -1,8 +1,4 @@
-// const calcWidth = require('./libs/calc-text-width.js').Verdana12
-
 module.exports = function ({subject, status, color = '4C1'}) {
-  // const sbl = calcWidth(subject) - subject.length
-  // const stl = calcWidth(status) - status.length
   const charWidth = 7.3
 
   const sbTextWidth = subject.length * charWidth
