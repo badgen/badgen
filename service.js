@@ -1,6 +1,6 @@
 const http = require('http')
 const router = require('find-my-way')()
-const badgen = require('.')
+const badgen = require('./lib/index')
 const readme = require('fs').readFileSync('./README.md', 'utf-8')
 
 function serveBadge (req, res, params) {
