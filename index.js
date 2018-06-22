@@ -28,11 +28,9 @@ module.exports = function ({subject, status, color = '4C1'}) {
       <path fill="#${color}" d="M${sbRectWidth} 0h4v20h-4z"/>
       <rect rx="3" width="${width}" height="20" fill="url(#a)"/>
       <g fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="12">
-        <text x="${sbTextCenter + 1}" y="15" textLength="${sbTextWidth}" fill="#0004">
-          ${subject}</text>
+        <text x="${sbTextCenter + 1}" y="15" textLength="${sbTextWidth}" fill="#0004">${subject}</text>
         <text x="${sbTextCenter}" y="14" textLength="${sbTextWidth}">${subject}</text>
-        <text x="${stTextCenter + 1}" y="15" textLength="${stTextWidth}" fill="#0004">
-          ${status}</text>
+        <text x="${stTextCenter + 1}" y="15" textLength="${stTextWidth}" fill="#0004">${status}</text>
         <text x="${stTextCenter}" y="14" textLength="${stTextWidth}">${status}</text>
       </g> <script xmlns=""/>
     </svg>
