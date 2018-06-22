@@ -1,15 +1,16 @@
-// const calcWidth = require('./libs/calc-text-width.js').Verdana12
+const calcWidth = require('./libs/calc-text-width.js').Arial12
 
 module.exports = function ({subject, status, color = '4C1'}) {
-  // const sbl = calcWidth(subject) - subject.length
-  // const stl = calcWidth(status) - status.length
-  const charWidth = 7.3
+  // const charWidth = 7.3
+  const calcFactor = 0.4
 
-  const sbTextWidth = subject.length * charWidth
+  const sbTextWidth = calcWidth(subject) + subject.length * calcFactor
+  // const sbTextWidth = subject.length * charWidth
   const sbRectWidth = sbTextWidth + 10
   const sbTextCenter = sbRectWidth / 2
 
-  const stTextWidth = status.length * charWidth
+  const stTextWidth = calcWidth(status) + status.length * calcFactor
+  // const stTextWidth = status.length * charWidth
   const stRectWidth = stTextWidth + 12
   const stTextCenter = sbRectWidth + stRectWidth / 2 - 1
 
@@ -26,11 +27,11 @@ module.exports = function ({subject, status, color = '4C1'}) {
       <rect rx="3" x="${sbRectWidth}" width="${stRectWidth}" height="20" fill="#${color}"/>
       <path fill="#${color}" d="M${sbRectWidth} 0h4v20h-4z"/>
       <rect rx="3" width="${width}" height="20" fill="url(#a)"/>
-      <g fill="#fff" text-anchor="middle" font-family="SF Mono,Consolas,monospace" font-size="12">
-        <text x="${sbTextCenter}" y="15" textLength="${sbTextWidth}" fill="#010101" fill-opacity=".3">
+      <g fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="12">
+        <text x="${sbTextCenter + 1}" y="15" textLength="${sbTextWidth}" fill="#0004">
           ${subject}</text>
         <text x="${sbTextCenter}" y="14" textLength="${sbTextWidth}">${subject}</text>
-        <text x="${stTextCenter}" y="15" textLength="${stTextWidth}" fill="#010101" fill-opacity=".3">
+        <text x="${stTextCenter + 1}" y="15" textLength="${stTextWidth}" fill="#0004">
           ${status}</text>
         <text x="${stTextCenter}" y="14" textLength="${stTextWidth}">${status}</text>
       </g> <script xmlns=""/>
