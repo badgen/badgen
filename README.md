@@ -50,7 +50,7 @@ const svgString = badgen({
 
 ## License
 
-MIT @ Amio
+ISC @ Amio
 
 [npm-badge]: https://img.shields.io/npm/v/badgen.svg
 [npm-link]: https://www.npmjs.com/package/badgen
