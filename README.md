@@ -31,7 +31,7 @@ Examples:
 |![](https://badgen.now.sh/badge/build/passing) | https://badgen.now.sh/badge/build/passing |
 |![](https://badgen.now.sh/badge/style/standard/f2a) | https://badgen.now.sh/badge/style/standard/f2a |
 |![](https://badgen.now.sh/badge/license/Apache-2.0/blue) | https://badgen.now.sh/badge/license/Apache-2.0/blue |
-|![](https://badgen.now.sh/badge/platform/ios%20%7C%20osx%20%7C%20tvos%20%7C%20watchos/grey) | https://badgen.now.sh/badge/platform/ios%20%7C%20osx%20%7C%20tvos%20%7C%20watchos/grey |
+|![](https://badgen.now.sh/badge/platform/ios%20%7C%20osx%20%7C%20tvos/grey) | https://badgen.now.sh/badge/platform/ios%20%7C%20osx%20%7C%20tvos/grey |
 
 
 ### Programmatically
