@@ -53,7 +53,7 @@ const svgString = badgen({
 
 ## Benchmarks
 
-`npm run bench` on my iMac5K(Late 2014), 3.5G i5:
+`npm run bench` on my iMac5K(Late 2014), 3.5G i5, with Node.js 10.5.0:
 
 ```bash
 generate by short params x 420,831 ops/sec ±1.03% (87 runs sampled)
