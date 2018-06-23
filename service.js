@@ -1,10 +1,21 @@
 const http = require('http')
 const router = require('find-my-way')()
 const badgen = require('./lib/index')
+const LRU = require('lru-cache')
+
+const cache = new LRU({ max: 1000 })
 
 function serveBadge (req, res, params) {
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen(params))
+
+  const cached = cache.get(req.url)
+  if (cached) {
+    res.end(cached)
+  } else {
+    const created = badgen(params)
+    cache.set(req.url, created)
+    res.end(created)
+  }
 }
 
 function redirect (req, res) {
