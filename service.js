@@ -18,6 +18,11 @@ function serveBadge (req, res, params) {
   }
 }
 
+function serveListBadge (req, res, params) {
+  const { subject, status, color } = params
+  serveBadge(req, res, { subject, status: status.replace(/,/g, ' | '), color })
+}
+
 function redirect (req, res) {
   res.writeHead(302, { 'Location': 'https://amio.github.io/badgen' })
   res.end()
@@ -25,6 +30,8 @@ function redirect (req, res) {
 
 router.get('/badge/:subject/:status', serveBadge)
 router.get('/badge/:subject/:status/:color', serveBadge)
+router.get('/list/:subject/:status', serveListBadge)
+router.get('/list/:subject/:status/:color', serveListBadge)
 router.get('/', redirect)
 
 const server = http.createServer((req, res) => router.lookup(req, res))
