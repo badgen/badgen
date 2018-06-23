@@ -2,6 +2,9 @@
 
 Fast, handcraft, pure JavaScript badge generator.
 
+- 🌀 No dependeny.
+- ⚡️ 200K+ ops on average. (see [benchamrks](#Benchmarks))
+
 ## Usage
 
 ### Badge Service
@@ -46,6 +49,16 @@ const svgString = badgen({
   status: 'v1.2.3',
   color: 'blue'
 })
+```
+
+## Benchmarks
+
+`npm run bench` on my iMac5K(Late 2014), 3.5G i5:
+
+```bash
+generate by short params x 420,831 ops/sec ±1.03% (87 runs sampled)
+generate by long params  x 167,862 ops/sec ±1.21% (90 runs sampled)
+generate by full params  x 245,303 ops/sec ±1.48% (92 runs sampled)
 ```
 
 ## License
