@@ -1,18 +1,23 @@
 {
   "name": "badgen",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Hand-crafted badge generator.",
-  "main": "index.js",
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "ISC",
+  "main": "lib/index.js",
   "scripts": {
+    "lint": "standard",
+    "bench": "node bench/index.js",
+    "test": "tap test/*.spec.js --reporter spec",
     "start": "node service.js",
     "predeploy": "now rm badgen --safe -y -T badgen",
     "deploy": "now -T badgen --public && now -T badgen alias"
   },
-  "author": "Amio <amio.cn@gmail.com>",
-  "license": "ISC",
   "devDependencies": {
-    "@amio/micro-cors": "0.0.6",
-    "find-my-way": "^1.13.0"
-  },
-  "dependencies": {}
+    "benchmark": "^2.1.4",
+    "find-my-way": "^1.13.0",
+    "lru-cache": "^4.1.3",
+    "standard": "^11.0.1",
+    "tap": "^12.0.1"
+  }
 }
