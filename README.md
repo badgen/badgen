@@ -2,8 +2,8 @@
 
 Fast, handcraft, pure JavaScript badge generator.
 
-- 🌀 No dependeny.
-- ⚡️ 200K+ ops on average. (see [benchamrks](#Benchmarks))
+- 🌀 Zero dependeny
+- ⚡️ Fast (see [benchamrks](#benchmarks))
 
 ## Usage
 
@@ -37,7 +37,7 @@ generate by full params  x 245,303 ops/sec ±1.48% (92 runs sampled)
 
 ## License
 
-ISC @ Amio
+![ISC](https://badgen.now.sh/badge/license/ISC/blue)
 
 [npm-badge]: https://img.shields.io/npm/v/badgen.svg
 [npm-link]: https://www.npmjs.com/package/badgen
