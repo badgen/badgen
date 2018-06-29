@@ -2,8 +2,8 @@
 
 Fast, handcraft, pure JavaScript badge generator.
 
-- 🌀 Zero dependeny
 - ⚡️ Fast (see [benchamrks](#benchmarks))
+- 🌀 Zero dependency (compare with 11 deps for [gh-badges][gh-badges-link] which being used on [shields.io][shields-io])
 
 ## Usage
 
@@ -55,3 +55,5 @@ generate by full params  x 461,409 ops/sec ±0.78% (90 runs sampled)
 [npm-link]: https://www.npmjs.com/package/badgen
 [pp-badge]: https://packagephobia.now.sh/badge?p=badgen
 [pp-link]: https://packagephobia.now.sh/result?p=badgen
+[shields-io]: https://shields.io
+[gh-badges-link]: https://www.npmjs.com/package/gh-badges
