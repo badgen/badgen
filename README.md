@@ -23,14 +23,14 @@ const svgString = badgen({
 
 Available color names:
 
+![](https://badgen.now.sh/badge/color/blue/blue)
+![](https://badgen.now.sh/badge/color/cyan/cyan)
 ![](https://badgen.now.sh/badge/color/green/green)
 ![](https://badgen.now.sh/badge/color/yellow/yellow)
 ![](https://badgen.now.sh/badge/color/orange/orange)
 ![](https://badgen.now.sh/badge/color/red/red)
 ![](https://badgen.now.sh/badge/color/pink/pink)
 ![](https://badgen.now.sh/badge/color/purple/purple)
-![](https://badgen.now.sh/badge/color/blue/blue)
-![](https://badgen.now.sh/badge/color/cyan/cyan)
 ![](https://badgen.now.sh/badge/color/grey/grey)
 
 ### Badge Service
