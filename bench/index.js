@@ -1,9 +1,9 @@
 const { Suite } = require('benchmark')
 const badgen = require('..')
 
-const shortParams = { subject: 'b', status: 'p' }
+const shortParams = { subject: '1', status: '2' }
 const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
-const fullParams = { subject: 'license', status: 'Apache-2.0', color: 'blue' }
+const fullParams = { subject: 'license', status: 'MIT', color: 'cyan' }
 
 new Suite()
   .add('generate by short params', () => badgen(shortParams))
