@@ -2,7 +2,7 @@
 
 Fast, handcraft, pure JavaScript badge generator.
 
-- ⚡️ Fast (see [benchamrks](#benchmarks))
+- ⚡️ Fast (see [benchmarks](#benchmarks))
 - 🌀 Zero dependency (compare with 11 deps for [gh-badges][gh-badges-link] which being used on [shields.io][shields-io])
 
 ## Usage
