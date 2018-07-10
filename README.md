@@ -51,7 +51,7 @@ generate by full params  x 770,180 ops/sec ±0.75% (90 runs sampled)
 
 ![ISC](https://badgen.now.sh/badge/license/ISC/blue)
 
-[npm-badge]: https://img.shields.io/npm/v/badgen.svg
+[npm-badge]: https://badgen.now.sh/npm/v/badgen
 [npm-link]: https://www.npmjs.com/package/badgen
 [pp-badge]: https://packagephobia.now.sh/badge?p=badgen
 [pp-link]: https://packagephobia.now.sh/result?p=badgen
