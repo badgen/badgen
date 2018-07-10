@@ -1,9 +1,9 @@
 const tap = require('tap')
-const { Verdana12 } = require('../lib/calc-text-width.js')
+const calcWidth = require('../lib/calc-text-width.js').Verdana11
 
 tap.test('calc width for "npm"', t => {
-  t.ok(typeof Verdana12 === 'function', 'export function: Verdana12')
-  t.ok(Number.isFinite(Verdana12('npm')), 'result is a number')
-  t.is(Verdana12('npm'), 26.77, 'result is correct value')
+  t.ok(typeof calcWidth === 'function', 'export function: Verdana12')
+  t.ok(Number.isFinite(calcWidth('npm')), 'result is a number')
+  t.is(calcWidth('npm'), 24.51, 'result is correct value')
   t.end()
 })
