@@ -19,3 +19,4 @@
 |![](http://localhost:3000/chat/gitter/purple) | http://localhost:3000/chat/gitter/purple |
 |![](http://localhost:3000/style/standard/f2a) | http://localhost:3000/style/standard/f2a |
 |![](http://localhost:3000/license/Apache-2.0/blue) | http://localhost:3000/license/Apache-2.0/blue |
+|![](http://localhost:3000/Language/Swift%203.0.1/orange) | http://localhost:3000/Language/Swift%203.0.1/orange |

@@ -1,12 +1,16 @@
 const http = require('http')
 const path = require('path')
+const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
 
 // @example
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
-  const [ subject, status, color ] = req.url.split('/').filter(Boolean)
+  const [ subject, status, color ] = req.url.split('/')
+    .filter(Boolean)
+    .map(s => qs.unescape(s))
+
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
   res.end(badgen({subject, status, color}))
 }
@@ -29,9 +33,7 @@ const serveIndex = serveMarked(md, {
 
 http.createServer((req, res) => {
   switch (req.url) {
-    case '/':
-      return serveIndex(req, res)
-    default:
-      return serveBadge(req, res)
+    case '/': return serveIndex(req, res)
+    default: return serveBadge(req, res)
   }
 }).listen(3000)
