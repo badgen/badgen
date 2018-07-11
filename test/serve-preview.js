@@ -31,9 +31,15 @@ const serveIndex = serveMarked(md, {
   `
 })
 
+const serve404 = (req, res) => {
+  res.writeHead(404)
+  res.end()
+}
+
 http.createServer((req, res) => {
   switch (req.url) {
     case '/': return serveIndex(req, res)
+    case '/favicon.ico': return serve404(req, res)
     default: return serveBadge(req, res)
   }
 }).listen(3000)
