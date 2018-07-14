@@ -42,7 +42,6 @@ https://badgen.now.sh/
 `npm run bench` on my iMac5K(Late 2014), 3.5G i5, with Node.js 10.5.0:
 
 ```bash
-generate by short params x 1,085,052 ops/sec ±1.03% (83 runs sampled)
 generate by long params  x 1,046,942 ops/sec ±0.61% (93 runs sampled)
 generate by full params  x 1,266,881 ops/sec ±0.76% (91 runs sampled)
 ```
