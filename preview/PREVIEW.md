@@ -2,21 +2,30 @@
 
 ## Colors
 
-![](http://localhost:3000/color/blue/blue)
-![](http://localhost:3000/color/cyan/cyan)
-![](http://localhost:3000/color/green/green)
-![](http://localhost:3000/color/yellow/yellow)
-![](http://localhost:3000/color/orange/orange)
-![](http://localhost:3000/color/red/red)
-![](http://localhost:3000/color/pink/pink)
-![](http://localhost:3000/color/purple/purple)
-![](http://localhost:3000/color/grey/grey)
+![](/color/blue/blue)
+![](/color/cyan/cyan)
+![](/color/green/green)
+![](/color/yellow/yellow)
+![](/color/orange/orange)
+![](/color/red/red)
+![](/color/pink/pink)
+![](/color/purple/purple)
+![](/color/grey/grey)
 
-## Badges
+## Default Style
 
 | Badge | URL |
 | --- | --- |
-|![](http://localhost:3000/chat/gitter/purple) | http://localhost:3000/chat/gitter/purple |
-|![](http://localhost:3000/style/standard/f2a) | http://localhost:3000/style/standard/f2a |
-|![](http://localhost:3000/license/Apache-2.0/blue) | http://localhost:3000/license/Apache-2.0/blue |
-|![](http://localhost:3000/Language/Swift%203.0.1/orange) | http://localhost:3000/Language/Swift%203.0.1/orange |
+|![](/chat/gitter/cyan) | [/chat/gitter/cyan](/chat/gitter/cyan) |
+|![](/style/standard/f2a) | [/style/standard/f2a](/style/standard/f2a) |
+|![](/license/Apache-2.0/blue) | [/license/Apache-2.0/blue](/license/Apache-2.0/blue) |
+|![](/Language/Swift%203.0.1/orange) | [/Language/Swift%203.0.1/orange](/Language/Swift%203.0.1/orange) |
+
+## Flat Style
+
+| Badge (flat) | URL |
+| --- | --- |
+|![](/chat/gitter/cyan/flat) | [/chat/gitter/cyan/flat](/chat/gitter/cyan/flat) |
+|![](/style/standard/f2a/flat) | [/style/standard/f2a/flat](/style/standard/f2a/flat) |
+|![](/license/Apache-2.0/blue/flat) | [/license/Apache-2.0/blueflat](/license/Apache-2.0/blueflat) |
+|![](/Language/Swift%203.0.1/orange/flat) | [/Language/Swift%203.0.1/orange/flat](/Language/Swift%203.0.1/orange/flat) |

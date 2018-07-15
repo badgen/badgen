@@ -13,12 +13,13 @@ Fast, handcraft, pure JavaScript badge generator.
 
 ```javascript
 const badgen = require('badgen')
+const options = { style: 'flat' }
 
 const svgString = badgen({
   subject: 'npm',   // <Text>
   status: 'v1.2.3', // <Text>
-  color: 'blue'     // <Color RGB> or <Color Name>
-})
+  color: 'blue'     // <Color RGB> or <Color Name>, optional
+}, options)         // options is optional
 ```
 
 Available color names:
@@ -42,8 +43,10 @@ https://badgen.now.sh/
 `npm run bench` on my iMac5K(Late 2014), 3.5G i5, with Node.js 10.5.0:
 
 ```bash
-generate by long params  x 1,046,942 ops/sec ±0.61% (93 runs sampled)
-generate by full params  x 1,266,881 ops/sec ±0.76% (91 runs sampled)
+[classic] style, long params  x 1,071,083 ops/sec ±0.82% (89 runs sampled)
+[classic] style, full params  x 1,332,181 ops/sec ±0.80% (92 runs sampled)
+   [flat] style, long params  x 1,145,825 ops/sec ±0.73% (94 runs sampled)
+   [flat] style, full params  x 1,416,453 ops/sec ±0.69% (91 runs sampled)
 ```
 
 ## License

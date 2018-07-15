@@ -5,7 +5,9 @@ const longParams = { subject: 'build-build-build', status: 'passing-passing-pass
 const fullParams = { subject: 'license', status: 'MIT', color: 'cyan' }
 
 new Suite()
-  .add('generate by long params ', () => badgen(longParams))
-  .add('generate by full params ', () => badgen(fullParams))
+  .add('[classic] style, long params ', () => badgen(longParams))
+  .add('[classic] style, full params ', () => badgen(fullParams))
+  .add('   [flat] style, long params ', () => badgen(longParams, { style: 'flat' }))
+  .add('   [flat] style, full params ', () => badgen(fullParams, { style: 'flat' }))
   .on('cycle', event => console.log(String(event.target)))
   .run()

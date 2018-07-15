@@ -7,12 +7,12 @@ const badgen = require('..')
 // @example
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
-  const [ subject, status, color ] = req.url.split('/')
+  const [ subject, status, color, style ] = req.url.split('/')
     .filter(Boolean)
     .map(s => qs.unescape(s))
 
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({subject, status, color}))
+  res.end(badgen({subject, status, color}, { style }))
 }
 
 // @example
