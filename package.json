@@ -1,7 +1,7 @@
 {
   "name": "badgen",
   "version": "1.1.4",
-  "description": "Hand-crafted badge generator.",
+  "description": "Fast svg badge generator.",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "main": "lib/index.js",
@@ -9,10 +9,8 @@
     "lint": "standard",
     "bench": "node bench/index.js",
     "preview": "node preview/serve.js",
-    "test": "tap test/*.spec.js --reporter spec",
-    "start": "node service.js",
-    "predeploy": "now rm badgen --safe -y -T badgen",
-    "deploy": "now -T badgen --public && now -T badgen alias"
+    "pretest": "npm run lint",
+    "test": "tap test/*.spec.js --reporter spec"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
