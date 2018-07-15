@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "standard",
     "bench": "node bench/index.js",
-    "preview": "node test/serve-preview.js",
+    "preview": "node preview/serve.js",
     "test": "tap test/*.spec.js --reporter spec",
     "start": "node service.js",
     "predeploy": "now rm badgen --safe -y -T badgen",
