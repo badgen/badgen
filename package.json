@@ -1,6 +1,6 @@
 {
   "name": "badgen",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Fast svg badge generator.",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
