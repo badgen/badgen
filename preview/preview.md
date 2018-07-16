@@ -27,5 +27,5 @@
 | --- | --- |
 |![](/chat/gitter/cyan/flat) | [/chat/gitter/cyan/flat](/chat/gitter/cyan/flat) |
 |![](/style/standard/f2a/flat) | [/style/standard/f2a/flat](/style/standard/f2a/flat) |
-|![](/license/Apache-2.0/blue/flat) | [/license/Apache-2.0/blueflat](/license/Apache-2.0/blueflat) |
+|![](/license/Apache-2.0/blue/flat) | [/license/Apache-2.0/blue/flat](/license/Apache-2.0/blue/flat) |
 |![](/Language/Swift%203.0.1/orange/flat) | [/Language/Swift%203.0.1/orange/flat](/Language/Swift%203.0.1/orange/flat) |
