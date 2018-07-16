@@ -13,14 +13,14 @@ tap.test('generate badge with { subject, status, color }', t => {
   t.end()
 })
 
-tap.test('generate flat badge with { subject, status }', t => {
-  const svg = badgen({ subject: 'npm', status: 'v1.0.0' }, { style: 'flat' })
+tap.test('generate badge with { subject, status, style }', t => {
+  const svg = badgen({ subject: 'npm', status: 'v1.0.0', style: 'flat' })
   t.ok(typeof svg === 'string', 'successfully generated')
   t.end()
 })
 
-tap.test('generate flat badge with { subject, status, color }', t => {
-  const svg = badgen({ subject: 'npm', status: 'v1.0.0', color: 'ADF' }, { style: 'flat' })
+tap.test('generate badge with { subject, status, color, style }', t => {
+  const svg = badgen({ subject: 'npm', status: 'v1.0.0', color: 'ADF', style: 'flat' })
   t.ok(typeof svg === 'string', 'successfully generated')
   t.end()
 })

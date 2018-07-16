@@ -13,13 +13,13 @@ Fast, handcraft, pure JavaScript badge generator.
 
 ```javascript
 const badgen = require('badgen')
-const options = { style: 'flat' }
 
 const svgString = badgen({
   subject: 'npm',   // <Text>
   status: 'v1.2.3', // <Text>
   color: 'blue'     // <Color RGB> or <Color Name>, optional
-}, options)         // options is optional
+  style: 'flat'     // 'flat' or undefined, optional
+})
 ```
 
 Available color names:
