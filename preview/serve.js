@@ -12,7 +12,7 @@ const serveBadge = (req, res) => {
     .map(s => qs.unescape(s))
 
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({subject, status, color}, { style }))
+  res.end(badgen({subject, status, color, style}))
 }
 
 // @example
