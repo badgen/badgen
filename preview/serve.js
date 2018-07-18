@@ -1,5 +1,6 @@
 const http = require('http')
 const path = require('path')
+const url = require('url')
 const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
@@ -7,8 +8,9 @@ const badgen = require('..')
 // @example
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
-  const unicode = Boolean(qs.parse(req.url.split('?')[1]).unicode)
-  const [ subject, status, color, style ] = req.url.split('/')
+  const { pathname, query } = url.parse(req.url)
+  const { style, unicode } = qs.parse(query)
+  const [ subject, status, color ] = pathname.split('/')
     .filter(Boolean)
     .map(s => qs.unescape(s))
 

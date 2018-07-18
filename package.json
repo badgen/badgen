@@ -2,6 +2,7 @@
   "name": "badgen",
   "version": "2.0.0",
   "description": "Fast svg badge generator.",
+  "repository": "amio/badgen",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "main": "lib/index.js",
@@ -10,11 +11,11 @@
     "bench": "node bench/index.js",
     "preview": "node preview/serve.js",
     "pretest": "npm run lint",
-    "test": "tap test/*.spec.js --reporter spec"
+    "test": "tap test/*.spec.js --reporter spec --coverage"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "serve-marked": "0.0.1",
+    "serve-marked": "0.2.0",
     "standard": "^11.0.1",
     "tap": "^12.0.1"
   }

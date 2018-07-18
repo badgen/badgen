@@ -25,14 +25,14 @@
 
 | Badge (flat) | URL |
 | --- | --- |
-|![](/chat/gitter/cyan/flat) | [/chat/gitter/cyan/flat](/chat/gitter/cyan/flat) |
-|![](/style/standard/f2a/flat) | [/style/standard/f2a/flat](/style/standard/f2a/flat) |
-|![](/license/Apache-2.0/blue/flat) | [/license/Apache-2.0/blue/flat](/license/Apache-2.0/blue/flat) |
-|![](/Language/Swift%203.0.1/orange/flat) | [/Language/Swift%203.0.1/orange/flat](/Language/Swift%203.0.1/orange/flat) |
+|![](/chat/gitter/cyan?style=flat) | [/chat/gitter/cyan?style=flat](/chat/gitter/cyan?style=flat) |
+|![](/style/standard/f2a?style=flat) | [/style/standard/f2a?style=flat](/style/standard/f2a?style=flat) |
+|![](/license/Apache-2.0/blue?style=flat) | [/license/Apache-2.0/blue?style=flat](/license/Apache-2.0/blue?style=flat) |
+|![](/Language/Swift%203.0.1/orange?style=flat) | [/Language/Swift%203.0.1/orange?style=flat](/Language/Swift%203.0.1/orange?style=flat) |
 
 ## Multibytes unicode
 
 | Badge | URL |
 | --- | --- |
-|![](/emoji/💩🤱🦄/cyan/flat?unicode=1) | [/emoji/💩🤱🦄/cyan/flat?unicode=1](/emoji/💩🤱🦄/cyan/flat?unicode=1) |
-|![](/emoji/💩🤱🦄/cyan/?unicode=1) | [/emoji/💩🤱🦄/cyan/?unicode=1](/emoji/💩🤱🦄/cyan/?unicode=1) |
+|![](/emoji/💩🤱🦄/cyan?style=flat&unicode=1) | [/emoji/💩🤱🦄/cyan?style=flat&unicode=1](/emoji/💩🤱🦄/cyan?style=flat&unicode=1) |
+|![](/emoji/💩🤱🦄/cyan?unicode=1) | [/emoji/💩🤱🦄/cyan?unicode=1](/emoji/💩🤱🦄/cyan?unicode=1) |
