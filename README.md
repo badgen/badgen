@@ -1,4 +1,8 @@
-# badgen [![npm-version][npm-badge]][npm-link] [![install size][pp-badge]][pp-link]
+# badgen
+
+[![npm-version][npm-badge]][npm-link]
+[![install size][pp-badge]][pp-link]
+[![Coverage Status][cr-badge]](cr-link)
 
 Fast, handcraft, pure JavaScript badge generator.
 
@@ -57,5 +61,7 @@ https://badgen.now.sh/
 [npm-link]: https://www.npmjs.com/package/badgen
 [pp-badge]: https://packagephobia.now.sh/badge?p=badgen
 [pp-link]: https://packagephobia.now.sh/result?p=badgen
+[cr-badge]: https://coveralls.io/repos/github/amio/badgen/badge.svg?branch=master
+[cr-link]: https://coveralls.io/github/amio/badgen?branch=master
 [shields-io]: https://shields.io
 [gh-badges-link]: https://www.npmjs.com/package/gh-badges
