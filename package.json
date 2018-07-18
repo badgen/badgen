@@ -10,7 +10,7 @@
     "bench": "node bench/index.js",
     "preview": "node preview/serve.js",
     "pretest": "npm run lint",
-    "test": "tap test/*.spec.js --reporter spec --100"
+    "test": "tap test/*.spec.js --reporter spec"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
