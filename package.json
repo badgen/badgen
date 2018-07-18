@@ -2,6 +2,7 @@
   "name": "badgen",
   "version": "2.0.0",
   "description": "Fast svg badge generator.",
+  "repository": "amio/badgen",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "main": "lib/index.js",
