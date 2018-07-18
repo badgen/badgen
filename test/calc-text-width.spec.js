@@ -7,3 +7,8 @@ tap.test('calc width for "npm"', t => {
   t.is(calcWidth('npm'), 24.9, 'result is correct value')
   t.end()
 })
+
+tap.test('exception handling', t => {
+  t.throws(() => calcWidth(0), TypeError, 'throw if feed with non-string input')
+  t.end()
+})
