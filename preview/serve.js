@@ -9,13 +9,13 @@ const badgen = require('..')
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
-  const { style, unicode } = qs.parse(query)
+  const { style, emoji } = qs.parse(query)
   const [ subject, status, color ] = pathname.split('/')
     .filter(Boolean)
     .map(s => qs.unescape(s))
 
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({subject, status, color, style, unicode}))
+  res.end(badgen({subject, status, color, style, emoji}))
 }
 
 // @example
@@ -25,7 +25,7 @@ const serveIndex = serveMarked(md, {
   title: 'Badgen - Fast badge generator',
   preset: 'merri',
   inlineCSS: `
-    body { color: #333 }
+    body { color: #333; padding-bottom: 5em }
     a { text-decoration: none; color: #06D }
     a:hover { text-decoration: underline }
     table { border-spacing: 0 }

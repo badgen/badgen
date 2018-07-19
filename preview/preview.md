@@ -29,3 +29,10 @@
 |![](/style/standard/f2a?style=flat) | [/style/standard/f2a?style=flat](/style/standard/f2a?style=flat) |
 |![](/license/Apache-2.0/blue?style=flat) | [/license/Apache-2.0/blue?style=flat](/license/Apache-2.0/blue?style=flat) |
 |![](/Language/Swift%203.0.1/orange?style=flat) | [/Language/Swift%203.0.1/orange?style=flat](/Language/Swift%203.0.1/orange?style=flat) |
+
+## Astral Plain Charset (emoji)
+
+| Badge | URL |
+| --- | --- |
+|![](/emoji/💩🤱🦄/cyan?style=flat&emoji=1) | [/emoji/💩🤱🦄/cyan?style=flat&emoji=1](/emoji/💩🤱🦄/cyan?style=flat&emoji=1) |
+|![](/emoji/💩🤱🦄/cyan?emoji=1) | [/emoji/💩🤱🦄/cyan?emoji=1](/emoji/💩🤱🦄/cyan?emoji=1) |
