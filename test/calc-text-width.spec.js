@@ -9,12 +9,17 @@ tap.test('basic functions', t => {
 })
 
 tap.test('calc width for "npm"', t => {
-  t.is(calcWidth('npm'), 24.9, 'result is correct value')
+  t.matchSnapshot(calcWidth('npm'), 'result is correct')
   t.end()
 })
 
 tap.test('calc width for unicode', t => {
-  t.is(calcWidth('壹佰贰拾叁'), 56, 'result is correct value')
+  t.matchSnapshot(calcWidth('壹佰贰拾叁'), 'result is correct')
+  t.end()
+})
+
+tap.test('calc width for emojis', t => {
+  t.matchSnapshot(calcWidth('💩🤱🦄', true), 'result is correct')
   t.end()
 })
 

@@ -10,6 +10,7 @@
     "lint": "standard",
     "bench": "node bench/index.js",
     "preview": "node preview/serve.js",
+    "snaptests": "TAP_SNAPSHOT=1 npm test",
     "pretest": "npm run lint",
     "test": "tap test/*.spec.js --reporter spec --coverage"
   },
