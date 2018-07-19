@@ -25,7 +25,7 @@ const serveIndex = serveMarked(md, {
   title: 'Badgen - Fast badge generator',
   preset: 'merri',
   inlineCSS: `
-    body { color: #333 }
+    body { color: #333; padding-bottom: 5em }
     a { text-decoration: none; color: #06D }
     a:hover { text-decoration: underline }
     table { border-spacing: 0 }
