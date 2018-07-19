@@ -3,7 +3,7 @@ const badgen = require('..')
 
 const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
 const fullParams = { subject: 'license', status: 'Apache 2.0', color: 'cyan' }
-const emojiParams = { subject: 'emojis', status: '💩🤱🦄💩🤱🦄', color: 'cyan' }
+const emojiParams = { subject: 'emojis', status: '💩🤱🦄💩🤱🦄', emoji: true }
 
 new Suite()
   .add('[classic] style, long params ', () => badgen(longParams))
