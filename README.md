@@ -4,7 +4,7 @@
 [![install size][pp-badge]][pp-link]
 [![Coverage Status][cr-badge]][cr-link]
 
-Fast, handcraft, pure JavaScript badge generator.
+Fast handcraft svg badge generator.
 
 - 🌀 1 dependency ([unicode-astral-regex][uar-link])
 - ⚡️ Fast by design (see [benchmarks](#benchmarks))
