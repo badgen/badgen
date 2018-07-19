@@ -1,6 +1,6 @@
 # badgen
 
-[![npm-version][npm-badge]][npm-link]
+[![npm version][npm-badge]][npm-link]
 [![install size][pp-badge]][pp-link]
 [![Coverage Status][cr-badge]][cr-link]
 
@@ -65,5 +65,3 @@ https://badgen.now.sh/
 [cr-badge]: https://coveralls.io/repos/github/amio/badgen/badge.svg?branch=master
 [cr-link]: https://coveralls.io/github/amio/badgen?branch=master
 [uar-link]: https://www.npmjs.com/package/unicode-astral-regex
-[shields-io]: https://shields.io
-[gh-badges-link]: https://www.npmjs.com/package/gh-badges
