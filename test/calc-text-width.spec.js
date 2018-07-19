@@ -14,7 +14,7 @@ tap.test('calc width for "npm"', t => {
 })
 
 tap.test('calc width for unicode', t => {
-  t.is(calcWidth('壹佰贰拾叁'), 55, 'result is correct value')
+  t.is(calcWidth('壹佰贰拾叁'), 56, 'result is correct value')
   t.end()
 })
 
