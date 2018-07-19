@@ -2,12 +2,13 @@
 
 [![npm-version][npm-badge]][npm-link]
 [![install size][pp-badge]][pp-link]
-[![Coverage Status][cr-badge]](cr-link)
+[![Coverage Status][cr-badge]][cr-link]
 
 Fast, handcraft, pure JavaScript badge generator.
 
-- ⚡️ Fast (see [benchmarks](#benchmarks))
-- 🌀 Zero dependency (compare with 11 deps for [gh-badges][gh-badges-link] which being used on [shields.io][shields-io])
+- 🌀 1 dependency ([unicode-astral-regex][uar-link])
+- ⚡️ Fast by design (see [benchmarks](#benchmarks))
+- 👯‍ Pure JavaScript, running in node & browser
 
 ## Usage
 
@@ -63,5 +64,6 @@ https://badgen.now.sh/
 [pp-link]: https://packagephobia.now.sh/result?p=badgen
 [cr-badge]: https://coveralls.io/repos/github/amio/badgen/badge.svg?branch=master
 [cr-link]: https://coveralls.io/github/amio/badgen?branch=master
+[uar-link]: https://www.npmjs.com/package/unicode-astral-regex
 [shields-io]: https://shields.io
 [gh-badges-link]: https://www.npmjs.com/package/gh-badges
