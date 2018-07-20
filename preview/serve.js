@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const http = require('http')
 const url = require('url')
@@ -6,8 +5,7 @@ const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
 
-const dockerSVG = fs.readFileSync(path.join(__dirname, 'docker.svg'))
-const dockerIcon = 'data:image/svg+xml;base64,' + dockerSVG.toString('base64')
+const dockerIcon = require('../test/docker-icon-b64.js')
 
 // @example
 // http://localhost:3000/npm/v1.2.3
