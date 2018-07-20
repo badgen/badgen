@@ -1,21 +1,26 @@
-const http = require('http')
+const fs = require('fs')
 const path = require('path')
+const http = require('http')
 const url = require('url')
 const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
 
+const dockerSVG = fs.readFileSync(path.join(__dirname, 'docker.svg'))
+const dockerIcon = 'data:image/svg+xml;base64,' + dockerSVG.toString('base64')
+
 // @example
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
-  const { style, emoji } = qs.parse(query)
+  const { style, emoji, docker } = qs.parse(query)
+  const icon = docker && dockerIcon
   const [ subject, status, color ] = pathname.split('/')
     .filter(Boolean)
     .map(s => qs.unescape(s))
 
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({subject, status, color, style, emoji}))
+  res.end(badgen({subject, status, color, style, emoji, icon}))
 }
 
 // @example

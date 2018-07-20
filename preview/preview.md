@@ -34,5 +34,12 @@
 
 | Badge | URL |
 | --- | --- |
-|![](/emoji/💩🤱🦄/cyan?style=flat&emoji=1) | [/emoji/💩🤱🦄/cyan?style=flat&emoji=1](/emoji/💩🤱🦄/cyan?style=flat&emoji=1) |
-|![](/emoji/💩🤱🦄/cyan?emoji=1) | [/emoji/💩🤱🦄/cyan?emoji=1](/emoji/💩🤱🦄/cyan?emoji=1) |
+|![](/emoji/💩🤱🦄/DDD?emoji=1) | [/emoji/💩🤱🦄/DDD?emoji=1](/emoji/💩🤱🦄/DDD?emoji=1) |
+|![](/emoji/💩🤱🦄/DDD?style=flat&emoji=1) | [/emoji/💩🤱🦄/DDD?style=flat&emoji=1](/emoji/💩🤱🦄/DDD?style=flat&emoji=1) |
+
+## Icon
+
+| Badge | URL |
+| --- | --- |
+| ![](/docker/badge?docker=1) | [/docker/badge?docker=1](/docker/badge?docker=1)
+| ![](/docker/badge?docker=1&style=flat) | [/docker/badge?docker=1&style=flat](/docker/badge?docker=1&style=flat)
