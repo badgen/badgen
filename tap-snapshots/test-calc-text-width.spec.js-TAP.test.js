@@ -10,9 +10,9 @@ exports[`test/calc-text-width.spec.js TAP calc width for "npm" > result is corre
 `
 
 exports[`test/calc-text-width.spec.js TAP calc width for unicode > result is correct 1`] = `
-57
+58
 `
 
 exports[`test/calc-text-width.spec.js TAP calc width for emojis > result is correct 1`] = `
-34.2
+34.8
 `
