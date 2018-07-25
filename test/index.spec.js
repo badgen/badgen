@@ -42,3 +42,9 @@ tap.test('generate badge with { subject, status, icon, style }', t => {
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })
+
+tap.test('type checking', t => {
+  t.throws(() => badgen({ status: '' }), TypeError, 'throw if subject is non-string')
+  t.throws(() => badgen({ subject: '' }), TypeError, 'throw if status is non-string')
+  t.end()
+})

@@ -22,8 +22,3 @@ tap.test('calc width for emojis', t => {
   t.matchSnapshot(calcWidth('💩🤱🦄', true), 'result is correct')
   t.end()
 })
-
-tap.test('exception handling', t => {
-  t.throws(() => calcWidth(0), TypeError, 'throw if feed with non-string input')
-  t.end()
-})
