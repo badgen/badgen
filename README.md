@@ -31,19 +31,19 @@ const svgString = badgen({
 
 Available color names:
 
-![](https://badgen.now.sh/badge/color/blue/blue)
-![](https://badgen.now.sh/badge/color/cyan/cyan)
-![](https://badgen.now.sh/badge/color/green/green)
-![](https://badgen.now.sh/badge/color/yellow/yellow)
-![](https://badgen.now.sh/badge/color/orange/orange)
-![](https://badgen.now.sh/badge/color/red/red)
-![](https://badgen.now.sh/badge/color/pink/pink)
-![](https://badgen.now.sh/badge/color/purple/purple)
-![](https://badgen.now.sh/badge/color/grey/grey)
+![](https://badgen.net/badge/color/blue/blue)
+![](https://badgen.net/badge/color/cyan/cyan)
+![](https://badgen.net/badge/color/green/green)
+![](https://badgen.net/badge/color/yellow/yellow)
+![](https://badgen.net/badge/color/orange/orange)
+![](https://badgen.net/badge/color/red/red)
+![](https://badgen.net/badge/color/pink/pink)
+![](https://badgen.net/badge/color/purple/purple)
+![](https://badgen.net/badge/color/grey/grey)
 
-### Badge Service
+### Badge As A Service
 
-https://badgen.now.sh/
+https://badgen.net
 
 ## Benchmarks
 
@@ -58,9 +58,9 @@ https://badgen.now.sh/
 
 ## License
 
-![ISC](https://badgen.now.sh/badge/license/ISC/blue)
+![ISC](https://badgen.net/badge/license/ISC/blue)
 
-[npm-badge]: https://badgen.now.sh/npm/v/badgen
+[npm-badge]: https://badgen.net/npm/v/badgen
 [npm-link]: https://www.npmjs.com/package/badgen
 [pp-badge]: https://packagephobia.now.sh/badge?p=badgen
 [pp-link]: https://packagephobia.now.sh/result?p=badgen
