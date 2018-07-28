@@ -25,7 +25,8 @@ const svgString = badgen({
   color: 'blue',    // <Color RGB> or <Color Name>, optional
   style: 'flat',    // 'flat' or undefined, optional
   emoji: true,      // Support emoji in text, optional
-  icon: 'data:image/svg+xml;base64,PHN2Zy...' // Use icon, optional
+  icon: 'data:image/svg+xml;base64,PHN2Zy...', // Use icon, optional
+  iconWidth: 13     // Use this if icon is not square.
 })
 ```
 
@@ -50,10 +51,12 @@ https://badgen.net
 `npm run bench` on my iMac5K(Late 2014), 3.5G i5, with Node.js 10.5.0:
 
 ```bash
-[classic] style, long params  x 1,071,083 ops/sec ±0.82% (89 runs sampled)
-[classic] style, full params  x 1,332,181 ops/sec ±0.80% (92 runs sampled)
-   [flat] style, long params  x 1,145,825 ops/sec ±0.73% (94 runs sampled)
-   [flat] style, full params  x 1,416,453 ops/sec ±0.69% (91 runs sampled)
+[classic] style, long params x 742,904 ops/sec ±0.92% (88 runs sampled)
+[classic] style, full params x 998,716 ops/sec ±0.78% (93 runs sampled)
+   [flat] style, long params x 618,005 ops/sec ±0.77% (92 runs sampled)
+   [flat] style, full params x 677,415 ops/sec ±0.67% (93 runs sampled)
+[classic] style, with emoji  x 502,203 ops/sec ±2.11% (91 runs sampled)
+[classic] style, with icon   x 844,518 ops/sec ±1.10% (94 runs sampled)
 ```
 
 ## License
