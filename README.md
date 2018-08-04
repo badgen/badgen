@@ -4,15 +4,13 @@
 [![install size][pp-badge]][pp-link]
 [![Coverage Status][cr-badge]][cr-link]
 
-Fast handcraft svg badge generator.
+Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 
 - 🌀 1 dependency ([unicode-astral-regex][uar-link])
 - ⚡️ Fast by design (see [benchmarks](#benchmarks))
 - 👯‍ Pure JavaScript, running in node & browser
 
 ## Usage
-
-### npm package
 
 `npm install badgen`
 
@@ -41,10 +39,6 @@ Available color names:
 ![](https://badgen.net/badge/color/pink/pink)
 ![](https://badgen.net/badge/color/purple/purple)
 ![](https://badgen.net/badge/color/grey/grey)
-
-### Badge As A Service
-
-https://badgen.net
 
 ## Benchmarks
 
