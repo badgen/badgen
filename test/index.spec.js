@@ -36,6 +36,13 @@ tap.test('generate badge with { subject, status, icon }', t => {
   t.end()
 })
 
+tap.test('generate badge with { status, icon }', t => {
+  const icon = require('./docker-icon-b64.js')
+  const svg = badgen({ subject: '', status: 'icon', icon })
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
 tap.test('generate badge with { subject, status, icon, style }', t => {
   const icon = require('./docker-icon-b64.js')
   const svg = badgen({ subject: 'docker', status: 'icon', style: 'flat', icon })
