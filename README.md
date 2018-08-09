@@ -1,12 +1,13 @@
-# badgen
+# Badgen
 
-[![npm version][npm-badge]][npm-link]
-[![install size][pp-badge]][pp-link]
-[![Coverage Status][cr-badge]][cr-link]
+[![npm version][npm-src]][npm-href]
+[![Coverage Status][coveralls-src]][coveralls-href]
+[![Install size][packagephobia-src]][packagephobia-href]
+[![License][license-src]][license-href]
 
 Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 
-- 🌀 1 dependency ([unicode-astral-regex][uar-link])
+- 🌀 1 dependency ([unicode-astral-regex](https://www.npmjs.com/package/unicode-astral-regex))
 - ⚡️ Fast by design (see [benchmarks](#benchmarks))
 - 👯‍ Pure JavaScript, running in node & browser
 
@@ -53,14 +54,11 @@ Available color names:
 [classic] style, with icon   x 844,518 ops/sec ±1.10% (94 runs sampled)
 ```
 
-## License
-
-![ISC](https://badgen.net/badge/license/ISC/blue)
-
-[npm-badge]: https://badgen.net/npm/v/badgen
-[npm-link]: https://www.npmjs.com/package/badgen
-[pp-badge]: https://packagephobia.now.sh/badge?p=badgen
-[pp-link]: https://packagephobia.now.sh/result?p=badgen
-[cr-badge]: https://coveralls.io/repos/github/amio/badgen/badge.svg?branch=master
-[cr-link]: https://coveralls.io/github/amio/badgen?branch=master
-[uar-link]: https://www.npmjs.com/package/unicode-astral-regex
+[npm-src]: https://badgen.net/npm/v/badgen
+[npm-href]: https://www.npmjs.com/package/badgen
+[packagephobia-src]: https://badgen.net/packagephobia/install/badgen
+[packagephobia-href]: https://packagephobia.now.sh/result?p=badgen
+[coveralls-src]: https://badgen.net/coveralls/c/github/amio/badgen/master
+[coveralls-href]: https://coveralls.io/github/amio/badgen?branch=master
+[license-src]: https://badgen.net/github/license/amio/badgen
+[license-href]: LICENSE.md
