@@ -2,7 +2,10 @@ const { Suite } = require('benchmark')
 const badgen = require('..')
 const dockerIcon = require('../test/docker-icon-b64.js')
 
-const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
+const longParams = {
+  subject: 'build-build-build',
+  status: 'passing-passing-passing'
+}
 const fullParams = { subject: 'license', status: 'Apache 2.0', color: 'cyan' }
 const emojiParams = { subject: 'emojis', status: '💩🤱🦄💩🤱🦄', emoji: true }
 const iconParams = { subject: 'docker', status: 'badge', icon: dockerIcon }
