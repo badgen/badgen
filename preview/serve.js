@@ -44,8 +44,11 @@ const serve404 = (req, res) => {
 
 http.createServer((req, res) => {
   switch (req.url) {
-    case '/': return serveIndex(req, res)
-    case '/favicon.ico': return serve404(req, res)
-    default: return serveBadge(req, res)
+    case '/':
+      return serveIndex(req, res)
+    case '/favicon.ico':
+      return serve404(req, res)
+    default:
+      return serveBadge(req, res)
   }
 }).listen(3000)
