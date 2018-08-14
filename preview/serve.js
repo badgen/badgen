@@ -18,7 +18,7 @@ const serveBadge = (req, res) => {
     .map(s => qs.unescape(s))
 
   res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({subject, status, color, style, emoji, icon}))
+  res.end(badgen({ subject, status, color, style, emoji, icon }))
 }
 
 // @example
@@ -44,8 +44,11 @@ const serve404 = (req, res) => {
 
 http.createServer((req, res) => {
   switch (req.url) {
-    case '/': return serveIndex(req, res)
-    case '/favicon.ico': return serve404(req, res)
-    default: return serveBadge(req, res)
+    case '/':
+      return serveIndex(req, res)
+    case '/favicon.ico':
+      return serve404(req, res)
+    default:
+      return serveBadge(req, res)
   }
 }).listen(3000)
