@@ -1,5 +1,5 @@
 const tap = require('tap')
-const calcWidth = require('../lib/calc-text-width.js').Verdana11
+const calcWidth = require('../lib/calc-text-width').Verdana11
 
 tap.test('basic functions', t => {
   t.ok(typeof calcWidth === 'function', 'export calcWidth function')
