@@ -2,10 +2,7 @@ const { Suite } = require('benchmark')
 const badgen = require('..')
 const dockerIcon = require('../test/docker-icon-b64.js')
 
-const longParams = {
-  subject: 'build-build-build',
-  status: 'passing-passing-passing'
-}
+const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
 const fullParams = { subject: 'license', status: 'Apache 2.0', color: 'cyan' }
 const emojiParams = { subject: 'emojis', status: '💩🤱🦄💩🤱🦄', emoji: true }
 const iconParams = { subject: 'docker', status: 'badge', icon: dockerIcon }
@@ -17,5 +14,7 @@ new Suite()
   .add('   [flat] style, full params', () => badgen({ style: 'flat', ...fullParams }))
   .add('[classic] style, with emoji ', () => badgen(emojiParams))
   .add('[classic] style, with icon  ', () => badgen(iconParams))
+  .add('   [flat] style, with emoji ', () => badgen({ style: 'flat', ...emojiParams }))
+  .add('   [flat] style, with icon  ', () => badgen({ style: 'flat', ...iconParams }))
   .on('cycle', event => console.log(String(event.target)))
   .run()
