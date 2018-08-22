@@ -1,4 +1,4 @@
-# Badgen
+# badgen
 
 [![npm version][npm-src]][npm-href]
 [![Coverage Status][coveralls-src]][coveralls-href]
