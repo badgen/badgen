@@ -11,6 +11,7 @@
 ![](/color/pink/pink)
 ![](/color/purple/purple)
 ![](/color/grey/grey)
+![](/color/black/black)
 
 ## Default Style
 
