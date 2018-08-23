@@ -43,15 +43,17 @@ Available color names:
 
 ## Benchmarks
 
-`npm run bench` on my iMac5K(Late 2014), 3.5G i5, with Node.js 10.5.0:
+`npm run bench` on my MacBook Pro (Early 2015), 2.7G i5, with Node.js 10.9.0:
 
 ```bash
-[classic] style, long params x 742,904 ops/sec ±0.92% (88 runs sampled)
-[classic] style, full params x 998,716 ops/sec ±0.78% (93 runs sampled)
-   [flat] style, long params x 618,005 ops/sec ±0.77% (92 runs sampled)
-   [flat] style, full params x 677,415 ops/sec ±0.67% (93 runs sampled)
-[classic] style, with emoji  x 502,203 ops/sec ±2.11% (91 runs sampled)
-[classic] style, with icon   x 844,518 ops/sec ±1.10% (94 runs sampled)
+[classic] style, long params x 1,317,650 ops/sec ±0.44% (88 runs sampled)
+[classic] style, full params x 1,711,139 ops/sec ±0.51% (94 runs sampled)
+[classic] style, with emoji  x 1,308,026 ops/sec ±1.94% (88 runs sampled)
+[classic] style, with icon   x 1,476,024 ops/sec ±0.48% (92 runs sampled)
+   [flat] style, long params x 663,252 ops/sec ±0.65% (93 runs sampled)
+   [flat] style, full params x 739,821 ops/sec ±1.56% (94 runs sampled)
+   [flat] style, with emoji  x 674,228 ops/sec ±3.05% (88 runs sampled)
+   [flat] style, with icon   x 764,540 ops/sec ±2.58% (88 runs sampled)
 ```
 
 [npm-src]: https://badgen.net/npm/v/badgen
