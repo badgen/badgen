@@ -18,6 +18,11 @@ tap.test('calc width for unicode', t => {
   t.end()
 })
 
+tap.test('calc width for accented characters', t => {
+  t.ok(calcWidth('ien') === calcWidth('ïéǹ'), 'normal and accented characters have the same width')
+  t.end()
+})
+
 tap.test('calc width for emojis', t => {
   t.matchSnapshot(calcWidth('💩🤱🦄', true), 'result is correct')
   t.end()
