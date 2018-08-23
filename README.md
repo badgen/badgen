@@ -7,7 +7,7 @@
 
 Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 
-- 🌀 1 dependency ([unicode-astral-regex](https://www.npmjs.com/package/unicode-astral-regex))
+- 🌀 Zero dependency
 - ⚡️ Fast by design (see [benchmarks](#benchmarks))
 - 👯‍ Pure JavaScript, running in node & browser
 
