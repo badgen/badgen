@@ -19,7 +19,9 @@ tap.test('calc width for unicode', t => {
 })
 
 tap.test('calc width for accented characters', t => {
-  t.ok(calcWidth('ien') === calcWidth('ïéǹ'), 'normal and accented characters have the same width')
+  t.ok(calcWidth('i') === calcWidth('ï'), 'i and ï have the same width')
+  t.ok(calcWidth('e') === calcWidth('é'), 'e and é have the same width')
+  t.ok(calcWidth('s') === calcWidth('ṣ'), 's and ṣ have the same width')
   t.end()
 })
 
