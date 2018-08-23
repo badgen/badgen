@@ -20,7 +20,5 @@
     "standard": "^11.0.1",
     "tap": "^12.0.1"
   },
-  "dependencies": {
-    "unicode-astral-regex": "^1.0.1"
-  }
+  "dependencies": {}
 }
