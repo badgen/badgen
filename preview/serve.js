@@ -5,27 +5,27 @@ const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
 
-const dockerIcon = require('../test/docker-icon-b64.js')
+const iconDataURI = require('../test/icon-data-uri.js')
 
 // @example
 // http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
-  const { style, emoji, docker } = qs.parse(query)
-  const icon = docker && dockerIcon
+  const { style, icon } = qs.parse(query)
   const [ subject, status, color ] = pathname.split('/')
     .filter(Boolean)
     .map(s => qs.unescape(s))
 
-  res.writeHead(200, { 'Content-Type': 'image/svg+xml;charset=utf-8' })
-  res.end(badgen({ subject, status, color, style, emoji, icon }))
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
+  res.end(badgen({ subject, status, color, style, icon: icon && iconDataURI }))
 }
 
 // @example
 // http://localhost:3000
 const md = path.join(__dirname, 'PREVIEW.md')
 const serveIndex = serveMarked(md, {
-  title: 'Badgen - Fast badge generator',
+  title: 'badgen preview',
   preset: 'merri',
   inlineCSS: `
     body { color: #333; padding-bottom: 5em; max-width: 800px }
