@@ -1,12 +1,12 @@
 const { Suite } = require('benchmark')
 const badgen = require('..')
-const dockerIcon = require('../test/docker-icon-b64.js')
+const icon = require('../test/icon-data-uri.js')
 
 /* eslint max-len: ["error", { "code": 90 }] */
 const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
 const fullParams = { subject: 'license', status: 'Apache 2.0', color: 'cyan' }
 const emojiParams = { subject: 'emojis', status: '💩🤱🦄💩🤱🦄', emoji: true }
-const iconParams = { subject: 'docker', status: 'badge', icon: dockerIcon }
+const iconParams = { subject: 'docker', status: 'badge', icon }
 
 new Suite()
   .add('[classic] style, long params', () => badgen(longParams))
