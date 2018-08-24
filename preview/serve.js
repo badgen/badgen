@@ -7,8 +7,6 @@ const badgen = require('..')
 
 const iconDataURI = require('../test/icon-data-uri.js')
 
-// @example
-// http://localhost:3000/npm/v1.2.3
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
   const { style, icon } = qs.parse(query)
@@ -21,35 +19,36 @@ const serveBadge = (req, res) => {
   res.end(badgen({ subject, status, color, style, icon: icon && iconDataURI }))
 }
 
-// @example
-// http://localhost:3000
-const md = path.join(__dirname, 'PREVIEW.md')
-const serveIndex = serveMarked(md, {
-  title: 'badgen preview',
-  preset: 'merri',
-  inlineCSS: `
-    body { color: #333; padding-bottom: 5em; max-width: 800px }
-    a { text-decoration: none; color: #06D }
-    a:hover { text-decoration: underline }
-    table { border-spacing: 0 }
-    td { padding: 0 1em 0 0; height: 24px; font: 14px/14px sans-serif }
-    td a { font: 14px/14px monospace; vertical-align: top }
-    img { height: 30px }
-  `
-})
+const md = path.join(__dirname, 'preview.md')
+const inlineCSS = `
+  body { color: #333; padding-bottom: 5em; max-width: 800px }
+  a { text-decoration: none; color: #06D }
+  a:hover { text-decoration: underline }
+  table { border-spacing: 0 }
+  td { padding: 0 1em 0 0; height: 24px; font: 14px/14px sans-serif }
+  td a { font: 14px/14px monospace; vertical-align: top }
+  img { height: 30px }
+`
 
 const serve404 = (req, res) => {
   res.writeHead(404)
   res.end()
 }
 
+const port = 3000
 http.createServer((req, res) => {
   switch (req.url) {
     case '/':
-      return serveIndex(req, res)
+      return serveMarked(md, {
+        title: 'badgen preview',
+        preset: 'merri',
+        inlineCSS
+      })(req, res)
     case '/favicon.ico':
       return serve404(req, res)
     default:
       return serveBadge(req, res)
   }
-}).listen(3000)
+}).listen(port)
+
+console.log(`Preview served at http://localhost:${port}`)
