@@ -39,6 +39,7 @@ Available color names:
 ![](https://badgen.net/badge/color/pink/pink)
 ![](https://badgen.net/badge/color/purple/purple)
 ![](https://badgen.net/badge/color/grey/grey)
+![](https://badgen.net/badge/color/black/black)
 
 ## Benchmarks
 
