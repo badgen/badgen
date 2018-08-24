@@ -34,6 +34,7 @@ const serveIndex = serveMarked(md, {
     table { border-spacing: 0 }
     td { padding: 0 1em 0 0; height: 24px; font: 14px/14px sans-serif }
     td a { font: 14px/14px monospace; vertical-align: top }
+    img { height: 30px }
   `
 })
 

@@ -17,7 +17,7 @@
 
 | Badge | URL |
 | --- | --- |
-|![](/▲/Déjà%20vu/purple) | [/▲/Déjà%20vu/purple](/▲/Déjà%20vu/purple) |
+|![](/▲/déjà%20vu/purple) | [/▲/déjà%20vu/purple](/▲/déjà%20vu/purple) |
 |![](/chat/on%20gitter/cyan) | [/chat/on%20gitter/cyan](/chat/on%20gitter/cyan) |
 |![](/style/standard/f2a) | [/style/standard/f2a](/style/standard/f2a) |
 |![](/license/Apache-2.0/blue) | [/license/Apache-2.0/blue](/license/Apache-2.0/blue) |
@@ -27,7 +27,7 @@
 
 | Badge (flat) | URL |
 | --- | --- |
-|![](/▲/Déjà%20vu/purple?style=flat) | [/▲/Déjà%20vu/purple?style=flat](/▲/Déjà%20vu/purple?style=flat) |
+|![](/▲/déjà%20vu/purple?style=flat) | [/▲/déjà%20vu/purple?style=flat](/▲/déjà%20vu/purple?style=flat) |
 |![](/chat/on%20gitter/cyan?style=flat) | [/chat/on%20gitter/cyan?style=flat](/chat/on%20gitter/cyan?style=flat) |
 |![](/style/standard/f2a?style=flat) | [/style/standard/f2a?style=flat](/style/standard/f2a?style=flat) |
 |![](/license/Apache-2.0/blue?style=flat) | [/license/Apache-2.0/blue?style=flat](/license/Apache-2.0/blue?style=flat) |
