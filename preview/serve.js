@@ -23,7 +23,7 @@ const serveBadge = (req, res) => {
 
 // @example
 // http://localhost:3000
-const md = path.join(__dirname, 'PREVIEW.md')
+const md = path.join(__dirname, 'preview.md')
 const serveIndex = serveMarked(md, {
   title: 'badgen preview',
   preset: 'merri',
