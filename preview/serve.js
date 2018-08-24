@@ -43,6 +43,7 @@ const serve404 = (req, res) => {
   res.end()
 }
 
+const port = 3000
 http.createServer((req, res) => {
   switch (req.url) {
     case '/':
@@ -52,4 +53,6 @@ http.createServer((req, res) => {
     default:
       return serveBadge(req, res)
   }
-}).listen(3000)
+}).listen(port)
+
+console.log(`Preview served at http://localhost:${port}`)
