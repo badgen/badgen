@@ -26,11 +26,6 @@ tap.test('calc width for accented characters', t => {
 })
 
 tap.test('calc width for emojis', t => {
-  t.matchSnapshot(calcWidth('💩🤱🦄', true), 'result is correct')
-  t.end()
-})
-
-tap.test('calc width for (not really) emojis', t => {
-  t.matchSnapshot(calcWidth('', true), 'result is correct')
+  t.matchSnapshot(calcWidth('💩🤱🦄'), 'result is correct')
   t.end()
 })
