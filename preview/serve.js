@@ -10,8 +10,7 @@ const iconDataURI = require('../test/icon-data-uri.js')
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
   const { style, icon } = qs.parse(query)
-  const [ subject, status, color ] = pathname.split('/')
-    .filter(Boolean)
+  const [ subject, status, color ] = pathname.split('/').splice(1)
     .map(s => qs.unescape(s))
 
   res.statusCode = 200
