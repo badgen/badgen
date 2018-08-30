@@ -47,3 +47,7 @@
 | ![](http://localhost:3000//badge?icon=1) | [//badge?icon=1](http://localhost:3000//badge?icon=1)
 | ![](/icon/badge?icon=1) | [/icon/badge?icon=1](/icon/badge?icon=1)
 | ![](/icon/badge?icon=1&style=flat) | [/icon/badge?icon=1&style=flat](/icon/badge?icon=1&style=flat)
+
+## Edge Cases
+
+![](/<{[(&)]}>/<{[(&)]}>)

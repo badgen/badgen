@@ -13,6 +13,10 @@ exports[`test/calc-text-width.spec.js TAP calc width for unicode > result is cor
 550
 `
 
+exports[`test/calc-text-width.spec.js TAP calc width for special chars > result is correct 1`] = `
+600
+`
+
 exports[`test/calc-text-width.spec.js TAP calc width for emojis > result is correct 1`] = `
 330
 `

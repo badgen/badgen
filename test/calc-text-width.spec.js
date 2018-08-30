@@ -18,6 +18,11 @@ tap.test('calc width for unicode', t => {
   t.end()
 })
 
+tap.test('calc width for special chars', t => {
+  t.matchSnapshot(calcWidth('<{[(&)]}>'), 'result is correct')
+  t.end()
+})
+
 tap.test('calc width for accented characters', t => {
   t.ok(calcWidth('i') === calcWidth('ï'), 'i and ï have the same width')
   t.ok(calcWidth('e') === calcWidth('é'), 'e and é have the same width')
