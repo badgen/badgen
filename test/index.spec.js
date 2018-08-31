@@ -1,6 +1,6 @@
 const tap = require('tap')
 const badgen = require('..')
-const icon = require('./icon-data-uri.js')
+const icons = require('./icon-data-uri.js')
 
 tap.test('generate badge with { subject, status }', t => {
   const svg = badgen({ subject: 'npm', status: 'v1.0.0' })
@@ -31,25 +31,25 @@ tap.test('generate badge with { subject, status, color, style }', t => {
 })
 
 tap.test('generate badge with { subject, status, icon }', t => {
-  const svg = badgen({ subject: 'docker', status: 'icon', icon })
+  const svg = badgen({ subject: 'docker', status: 'icon', icon: icons.chrome })
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })
 
 tap.test('generate badge with { status, icon }', t => {
-  const svg = badgen({ subject: '', status: 'icon', icon })
+  const svg = badgen({ subject: '', status: 'icon', icon: icons.chrome })
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })
 
 tap.test('generate badge with { status, icon, iconWidth }', t => {
-  const svg = badgen({ subject: '', status: 'icon', icon, iconWidth: 15 })
+  const svg = badgen({ subject: '', status: 'icon', icon: icons.lgtm, iconWidth: 19 })
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })
 
 tap.test('generate badge with { subject, status, icon, style }', t => {
-  const svg = badgen({ subject: 'docker', status: 'icon', style: 'flat', icon })
+  const svg = badgen({ subject: 'docker', status: 'icon', style: 'flat', icon: icons.lgtm })
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })

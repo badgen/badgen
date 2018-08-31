@@ -44,9 +44,11 @@
 
 | Badge | URL |
 | --- | --- |
-| ![](http://localhost:3000//badge?icon=1) | [//badge?icon=1](http://localhost:3000//badge?icon=1)
-| ![](/icon/badge?icon=1) | [/icon/badge?icon=1](/icon/badge?icon=1)
-| ![](/icon/badge?icon=1&style=flat) | [/icon/badge?icon=1&style=flat](/icon/badge?icon=1&style=flat)
+| ![](http://localhost:3000//badge?icon=chrome) | [//badge?icon=chrome](http://localhost:3000//badge?icon=chrome)
+| ![](/icon/badge?icon=chrome) | [/icon/badge?icon=chrome](/icon/badge?icon=chrome)
+| ![](/icon/badge?icon=chrome&style=flat) | [/icon/badge?icon=chrome&style=flat](/icon/badge?icon=chrome&style=flat)
+| ![](/icon/badge?icon=lgtm&iconWidth=19&style=flat) | [/icon/badge?icon=lgtm&iconWidth=19&style=flat](/icon/badge?icon=lgtm&iconWidth=19&style=flat)
+
 
 ## Edge Cases
 

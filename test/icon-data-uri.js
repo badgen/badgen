@@ -1,7 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 
-const iconSVG = fs.readFileSync(path.join(__dirname, 'chrome.svg'))
-const iconDataURI = 'data:image/svg+xml;base64,' + iconSVG.toString('base64')
+const readAsDataURI = file => {
+  const svg = fs.readFileSync(path.join(__dirname, file))
+  return `data:image/svg+xml;base64,${svg.toString('base64')}`
+}
 
-module.exports = iconDataURI
+module.exports = {
+  chrome: readAsDataURI('chrome.svg'),
+  lgtm: readAsDataURI('lgtm.svg')
+}
