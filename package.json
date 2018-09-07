@@ -5,7 +5,7 @@
   "repository": "amio/badgen",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
-  "main": "lib/index.js",
+  "main": "badgen.min.js",
   "scripts": {
     "lint": "standard",
     "bench": "node bench/index.js",
@@ -13,7 +13,8 @@
     "snaptests": "TAP_SNAPSHOT=1 npm test",
     "pretest": "npm run lint",
     "test": "tap test/*.spec.js --reporter spec --coverage",
-    "prepublishOnly": "lyo"
+    "build": "lyo -i lib/index.js -o .",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
