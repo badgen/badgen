@@ -23,7 +23,7 @@ const svgString = badgen({
   status: 'v1.2.3', // <Text>
   color: 'blue',    // <Color RGB> or <Color Name>, optional
   style: 'flat',    // 'flat' or undefined, optional
-  icon: 'data:image/svg+xml;base64,PHN2Zy...', // Use icon, optional
+  icon: 'data:image/svg+xml;base64,...', // Use icon, optional
   iconWidth: 13     // Use this if icon is not square.
 })
 ```
@@ -40,6 +40,15 @@ Available color names:
 ![](https://badgen.net/badge/color/purple/purple)
 ![](https://badgen.net/badge/color/grey/grey)
 ![](https://badgen.net/badge/color/black/black)
+
+### In browser
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/badgen/badgen.min.js"></script>
+<script>
+  var svgString = badgen({ /*...*/ })
+</script>
+```
 
 ## Benchmarks
 
