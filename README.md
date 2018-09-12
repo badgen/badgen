@@ -65,6 +65,10 @@ Available color names:
    [flat] style, with icon   x 566,848 ops/sec ±0.84% (93 runs sampled)
 ```
 
+## See Also
+
+- [gradient-badge][gradient-badge] - Badge generator with color gradient support
+
 [npm-src]: https://badgen.net/npm/v/badgen
 [npm-href]: https://www.npmjs.com/package/badgen
 [packagephobia-src]: https://badgen.net/packagephobia/install/badgen
@@ -73,3 +77,4 @@ Available color names:
 [coveralls-href]: https://coveralls.io/github/amio/badgen?branch=master
 [license-src]: https://badgen.net/github/license/amio/badgen
 [license-href]: LICENSE.md
+[gradient-badge]: https://github.com/bokub/gradient-badge
