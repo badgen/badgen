@@ -5,7 +5,7 @@ const qs = require('querystring')
 const serveMarked = require('serve-marked')
 const badgen = require('..')
 
-const icons = require('../test/icon-data-uri.js')
+const icons = require('../test/assets/icon-data-uri.js')
 
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)

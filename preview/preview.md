@@ -49,6 +49,13 @@
 | ![](/icon/badge?icon=chrome&style=flat) | [/icon/badge?icon=chrome&style=flat](/icon/badge?icon=chrome&style=flat)
 | ![](/icon/badge?icon=lgtm&iconWidth=19&style=flat) | [/icon/badge?icon=lgtm&iconWidth=19&style=flat](/icon/badge?icon=lgtm&iconWidth=19&style=flat)
 
+## Bare badge
+
+| Badge | URL |
+| --- | --- |
+| ![](http://localhost:3000//badge) | [//badge](http://localhost:3000//badge)
+| ![](http://localhost:3000//badge?style=flat) | [//badge?style=flat](//badge?style=flat)
+
 
 ## Edge Cases
 
