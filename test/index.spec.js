@@ -1,6 +1,6 @@
 const tap = require('tap')
 const badgen = require('..')
-const icons = require('./icon-data-uri.js')
+const icons = require('./assets/icon-data-uri.js')
 
 tap.test('generate badge with { subject, status }', t => {
   const svg = badgen({ subject: 'npm', status: 'v1.0.0' })
