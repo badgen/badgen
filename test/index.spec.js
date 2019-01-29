@@ -54,8 +54,28 @@ tap.test('generate badge with { subject, status, icon, style }', t => {
   t.end()
 })
 
+tap.test('generate bare badge with { status }', t => {
+  const svg = badgen({ status: 'v1.0.0' })
+  t.ok(typeof svg === 'string', 'successfully generated')
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
+tap.test('generate bare badge with { status, color }', t => {
+  const svg = badgen({ status: 'v1.0.0', color: 'ADF' })
+  t.ok(typeof svg === 'string', 'successfully generated')
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
+tap.test('generate bare badge with { status, style }', t => {
+  const svg = badgen({ status: 'v1.0.0', style: 'flat' })
+  t.ok(typeof svg === 'string', 'successfully generated')
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
 tap.test('type checking', t => {
-  t.throws(() => badgen({ status: '' }), TypeError, 'throw if subject is non-string')
-  t.throws(() => badgen({ subject: '' }), TypeError, 'throw if status is non-string')
+  t.throws(() => badgen({}), TypeError, 'throw if status is non-string')
   t.end()
 })

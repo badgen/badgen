@@ -5,7 +5,6 @@ const sanitize = str => str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;
 const bare = require('./bare.js')
 
 module.exports = ({ subject, status, color, style, icon, iconWidth = 13 }) => {
-  typeAssert(typeof subject === 'string', '<subject> must be string')
   typeAssert(typeof status === 'string', '<status> must be string')
 
   if (!subject && !icon) {
