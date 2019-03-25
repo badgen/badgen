@@ -6,6 +6,7 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "lint": "standard",
     "bench": "node bench/index.js",
