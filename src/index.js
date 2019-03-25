@@ -63,6 +63,8 @@ module.exports = ({ subject, status, color, style, icon, iconWidth = 13 }) => {
 </svg>`
 }
 
+module.exports.default = module.exports
+
 const typeAssert = (assertion, message) => {
   if (!assertion) throw new TypeError(message)
 }
