@@ -4,6 +4,7 @@
 [![Coverage Status][coveralls-src]][coveralls-href]
 [![Install size][packagephobia-src]][packagephobia-href]
 [![License][license-src]][license-href]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbadgen%2Fbadgen.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbadgen%2Fbadgen?ref=badge_shield)
 
 Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 
@@ -78,3 +79,7 @@ Available color names:
 [license-src]: https://badgen.net/github/license/amio/badgen
 [license-href]: LICENSE.md
 [gradient-badge]: https://github.com/bokub/gradient-badge
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbadgen%2Fbadgen.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbadgen%2Fbadgen?ref=badge_large)
