@@ -4,7 +4,7 @@
   "description": "Fast svg badge generator.",
   "repository": "amio/badgen",
   "author": "Amio <amio.cn@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
