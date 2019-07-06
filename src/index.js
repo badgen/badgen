@@ -4,26 +4,27 @@ const sanitize = str => str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;
 
 const bare = require('./bare.js')
 
-module.exports = ({ subject, status, color, style, icon, iconWidth = 13 }) => {
+module.exports = ({ subject, label, status, color, style, icon, iconWidth = 13 }) => {
   typeAssert(typeof status === 'string', '<status> must be string')
 
-  if (!subject && !icon) {
+  label = label === undefined ? subject : label
+  if (!label && !icon) {
     return bare({ status, color, style })
   }
 
   color = colorPresets[color] || color || colorPresets['blue']
   iconWidth = iconWidth * 10
 
-  const iconSpanWidth = icon ? (subject.length ? iconWidth + 30 : iconWidth - 18) : 0
+  const iconSpanWidth = icon ? (label.length ? iconWidth + 30 : iconWidth - 18) : 0
   const sbTextStart = icon ? (iconSpanWidth + 50) : 50
-  const sbTextWidth = calcWidth(subject)
+  const sbTextWidth = calcWidth(label)
   const stTextWidth = calcWidth(status)
   const sbRectWidth = sbTextWidth + 100 + iconSpanWidth
   const stRectWidth = stTextWidth + 100
   const width = sbRectWidth + stRectWidth
   const xlink = icon ? ' xmlns:xlink="http://www.w3.org/1999/xlink"' : ''
 
-  subject = sanitize(subject)
+  label = sanitize(label)
   status = sanitize(status)
 
   if (style === 'flat') {
@@ -33,8 +34,8 @@ module.exports = ({ subject, status, color, style, icon, iconWidth = 13 }) => {
     <rect fill="#${color}" x="${sbRectWidth}" width="${stRectWidth}" height="200"/>
   </g>
   <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
-    <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.1">${subject}</text>
-    <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${subject}</text>
+    <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.1">${label}</text>
+    <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${label}</text>
     <text x="${sbRectWidth + 55}" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.1">${status}</text>
     <text x="${sbRectWidth + 45}" y="138" textLength="${stTextWidth}">${status}</text>
   </g>
@@ -54,8 +55,8 @@ module.exports = ({ subject, status, color, style, icon, iconWidth = 13 }) => {
     <rect width="${width}" height="200" fill="url(#a)"/>
   </g>
   <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
-    <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.25">${subject}</text>
-    <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${subject}</text>
+    <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.25">${label}</text>
+    <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${label}</text>
     <text x="${sbRectWidth + 55}" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.25">${status}</text>
     <text x="${sbRectWidth + 45}" y="138" textLength="${stTextWidth}">${status}</text>
   </g>
