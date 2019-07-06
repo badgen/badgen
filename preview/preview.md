@@ -22,6 +22,7 @@
 |![](/style/standard/f2a) | [/style/standard/f2a](/style/standard/f2a) |
 |![](/license/Apache-2.0/blue) | [/license/Apache-2.0/blue](/license/Apache-2.0/blue) |
 |![](/Language/Swift%203.0.1/orange) | [/Language/Swift%203.0.1/orange](/Language/Swift%203.0.1/orange) |
+|![](/labelColor/badge/yellow?icon=chrome&labelColor=red)
 
 ## Flat Style
 

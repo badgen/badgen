@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const http = require('http')
 const url = require('url')
@@ -9,16 +10,16 @@ const icons = require('../test/assets/icon-data-uri.js')
 
 const serveBadge = (req, res) => {
   const { pathname, query } = url.parse(req.url)
-  const { style, icon, iconWidth } = qs.parse(query)
+  const { label, style, icon, iconWidth, labelColor } = qs.parse(query)
   const [ subject, status, color ] = pathname.split('/').splice(1)
     .map(s => qs.unescape(s))
 
   res.statusCode = 200
   res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
-  res.end(badgen({ subject, status, color, style, icon: icons[icon], iconWidth }))
+  res.end(badgen({ label, labelColor, subject, status, color, style, icon: icons[icon], iconWidth }))
 }
 
-const md = path.join(__dirname, 'preview.md')
+const md = fs.readFileSync(path.join(__dirname, 'preview.md'), 'utf8')
 const inlineCSS = `
   body { color: #333; padding-bottom: 5em; max-width: 800px }
   a { text-decoration: none; color: #06D }
