@@ -18,14 +18,15 @@ Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 ```javascript
 const badgen = require('badgen')
 
+// only `status` is required.
 const svgString = badgen({
   label: 'npm',     // <Text>
-  status: 'v1.2.3', // <Text>
-  color: 'blue',    // <Color RGB> or <Color Name>, optional
-  style: 'flat',    // 'flat' or undefined, optional
-  icon: 'data:image/svg+xml;base64,...', // Use icon, optional
-  iconWidth: 13,    // Use this if icon is not square
-  labelColor: 'red' // <Color RGB> or <Color Name>, optional
+  labelColor: 'ADF' // <Color RGB> or <Color Name> (default 555)
+  status: 'v1.2.3', // <Text>, required
+  color: 'blue',    // <Color RGB> or <Color Name> (default blue)
+  style: 'flat',    // 'flat' or undefined
+  icon: 'data:image/svg+xml;base64,...', // Use icon
+  iconWidth: 13,    // Set this if icon is not square
 })
 ```
 
