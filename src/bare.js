@@ -1,6 +1,6 @@
 const calcWidth = require('./calc-text-width.js').Verdana110
 const colorPresets = require('./color-presets.js')
-const sanitize = str => str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;')
+const { sanitize, typeAssert } = require('./utils.js')
 
 module.exports = ({ status, color, style }) => {
   typeAssert(typeof status === 'string', '<status> must be string')
@@ -38,8 +38,4 @@ module.exports = ({ status, color, style }) => {
     <text x="55" y="138" textLength="${stTextWidth}">${status}</text>
   </g>
 </svg>`
-}
-
-const typeAssert = (assertion, message) => {
-  if (!assertion) throw new TypeError(message)
 }

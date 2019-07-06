@@ -1,6 +1,6 @@
 const calcWidth = require('./calc-text-width.js').Verdana110
 const colorPresets = require('./color-presets.js')
-const sanitize = str => str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;')
+const { sanitize, typeAssert } = require('./utils.js')
 
 const bare = require('./bare.js')
 
@@ -75,7 +75,3 @@ module.exports = ({
 }
 
 module.exports.default = module.exports
-
-const typeAssert = (assertion, message) => {
-  if (!assertion) throw new TypeError(message)
-}
