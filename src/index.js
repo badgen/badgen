@@ -4,15 +4,25 @@ const sanitize = str => str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;
 
 const bare = require('./bare.js')
 
-module.exports = ({ subject, label, status, color, style, icon, iconWidth = 13 }) => {
+module.exports = ({
+  label,
+  subject,
+  status,
+  color = 'blue',
+  style,
+  icon,
+  iconWidth = 13,
+  labelColor = '555'
+}) => {
   typeAssert(typeof status === 'string', '<status> must be string')
 
-  label = label === undefined ? subject : label
+  label = label === undefined ? subject : label // subject is deprecated
   if (!label && !icon) {
     return bare({ status, color, style })
   }
 
-  color = colorPresets[color] || color || colorPresets['blue']
+  color = colorPresets[color] || color
+  labelColor = colorPresets[labelColor] || labelColor
   iconWidth = iconWidth * 10
 
   const iconSpanWidth = icon ? (label.length ? iconWidth + 30 : iconWidth - 18) : 0
@@ -30,7 +40,7 @@ module.exports = ({ subject, label, status, color, style, icon, iconWidth = 13 }
   if (style === 'flat') {
     return `<svg width="${width / 10}" height="20" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
   <g>
-    <rect fill="#555" width="${sbRectWidth}" height="200"/>
+    <rect fill="#${labelColor}" width="${sbRectWidth}" height="200"/>
     <rect fill="#${color}" x="${sbRectWidth}" width="${stRectWidth}" height="200"/>
   </g>
   <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
@@ -50,7 +60,7 @@ module.exports = ({ subject, label, status, color, style, icon, iconWidth = 13 }
   </linearGradient>
   <mask id="m"><rect width="${width}" height="200" rx="30" fill="#FFF"/></mask>
   <g mask="url(#m)">
-    <rect width="${sbRectWidth}" height="200" fill="#555"/>
+    <rect width="${sbRectWidth}" height="200" fill="#${labelColor}"/>
     <rect width="${stRectWidth}" height="200" fill="#${color}" x="${sbRectWidth}"/>
     <rect width="${width}" height="200" fill="url(#a)"/>
   </g>
