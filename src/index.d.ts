@@ -1,5 +1,6 @@
 interface BadgenOptions {
   status: string;
+  subject?: string;
   label?: string;
   color?: string;
   style?: StyleOption;
