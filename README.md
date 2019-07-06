@@ -46,7 +46,7 @@ Available color names:
 ### In browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/badgen/badgen.min.js"></script>
+<script src="https://wzrd.in/standalone/badgen@latest"></script>
 <script>
   var svgString = badgen({ /*...*/ })
 </script>
