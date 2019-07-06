@@ -1,8 +1,9 @@
 interface BadgenOptions {
   status: string;
   subject?: string;
-  label?: string;
   color?: string;
+  label?: string;
+  labelColor?: string
   style?: StyleOption;
   icon?: string;
   iconWidth?: 13;
