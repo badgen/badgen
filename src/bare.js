@@ -4,7 +4,7 @@ const { sanitize, typeAssert } = require('./utils.js')
 
 module.exports = ({ status, color, style }) => {
   typeAssert(typeof status === 'string', '<status> must be string')
-  color = colorPresets[color] || color || colorPresets['blue']
+  color = colorPresets[color] || color || colorPresets.blue
 
   const stTextWidth = calcWidth(status)
   const stRectWidth = stTextWidth + 115

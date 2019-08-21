@@ -9,9 +9,9 @@ const badgen = require('..')
 const icons = require('../test/assets/icon-data-uri.js')
 
 const serveBadge = (req, res) => {
-  const { pathname, query } = url.parse(req.url)
+  const { pathname, searchParams: query } = new url.URL(req.url)
   const { label, style, icon, iconWidth, labelColor } = qs.parse(query)
-  const [ subject, status, color ] = pathname.split('/').splice(1)
+  const [subject, status, color] = pathname.split('/').splice(1)
     .map(s => qs.unescape(s))
 
   res.statusCode = 200
