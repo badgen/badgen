@@ -1,0 +1,26 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  test:
+
+    strategy:
+      matrix:
+        node: [8, 10, 12]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: use Node.js ${{ matrix.node }} on ${{ matrix.os }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Run npm ci
+      run: npm ci
+    - name: Run npm build
+      run: npm run build --ifpresent
+    - name: Run npm test
+      run: npm test
