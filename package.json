@@ -20,8 +20,8 @@
   "devDependencies": {
     "@zeit/ncc": "^0.20.4",
     "benchmark": "^2.1.4",
-    "serve-marked": "^2.0.0",
-    "standard": "^14.0.0",
-    "tap": "^14.4.1"
+    "serve-marked": "^2.0.2",
+    "standard": "^14.0.2",
+    "tap": "^14.6.1"
   }
 }
