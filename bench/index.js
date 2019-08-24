@@ -1,6 +1,6 @@
 const { Suite } = require('benchmark')
 const badgen = require('..')
-const icon = require('../test/icon-data-uri.js')
+const icon = require('../test/assets/icon-data-uri.js')
 
 /* eslint max-len: ["error", { "code": 90 }] */
 const longParams = { subject: 'build-build-build', status: 'passing-passing-passing' }
