@@ -7,11 +7,9 @@
     "rootDir": "src",
     "outDir": "dist",
 
-    "declaration": true,
     "sourceMap":true,
-    "allowJs":true,
+    "declaration": true,
 
-    "moduleResolution":"node",
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true
