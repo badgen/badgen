@@ -54,17 +54,17 @@ Available color names:
 
 ## Benchmarks
 
-`npm run bench` on my MacBook Pro (Early 2015), 2.7G i5, with Node.js 10.9.0:
+`npm run bench` on iMac 5K (Late 2014), 3.5G i5, with Node.js 12.11.0:
 
 ```bash
-[classic] style, long params x 784,111 ops/sec ±1.53% (89 runs sampled)
-[classic] style, full params x 1,096,667 ops/sec ±1.37% (90 runs sampled)
-[classic] style, with emoji  x 1,086,230 ops/sec ±1.85% (92 runs sampled)
-[classic] style, with icon   x 941,914 ops/sec ±0.41% (93 runs sampled)
-   [flat] style, long params x 546,447 ops/sec ±0.52% (91 runs sampled)
-   [flat] style, full params x 612,977 ops/sec ±1.08% (94 runs sampled)
-   [flat] style, with emoji  x 620,193 ops/sec ±0.95% (92 runs sampled)
-   [flat] style, with icon   x 566,848 ops/sec ±0.84% (93 runs sampled)
+[classic] style, long params x 980,342 ops/sec ±0.36% (95 runs sampled)
+[classic] style, full params x 1,282,650 ops/sec ±0.54% (93 runs sampled)
+[classic] style, with emoji  x 1,286,513 ops/sec ±0.30% (92 runs sampled)
+[classic] style, with icon   x 1,127,749 ops/sec ±0.38% (92 runs sampled)
+   [flat] style, long params x 780,018 ops/sec ±0.32% (93 runs sampled)
+   [flat] style, full params x 1,015,617 ops/sec ±0.27% (96 runs sampled)
+   [flat] style, with emoji  x 1,033,564 ops/sec ±0.51% (95 runs sampled)
+   [flat] style, with icon   x 988,562 ops/sec ±0.33% (96 runs sampled)
 ```
 
 ## See Also
