@@ -1,5 +1,5 @@
 const { Suite } = require('benchmark')
-const badgen = require('..')
+const { badgen } = require('..')
 const icon = require('../test/assets/icon-data-uri.js')
 
 /* eslint max-len: ["error", { "code": 90 }] */

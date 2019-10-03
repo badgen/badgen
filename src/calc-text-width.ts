@@ -1,3 +1,5 @@
+// import widthsVerdana110 from './widths-verdana-110.json'
+// @ts-ignore
 const widthsVerdana110 = require('./widths-verdana-110.json')
 
 const calcWidth = (charWidthTable) => {
@@ -15,6 +17,4 @@ const calcWidth = (charWidthTable) => {
   }
 }
 
-module.exports = {
-  Verdana110: calcWidth(widthsVerdana110)
-}
+export const Verdana110 = calcWidth(widthsVerdana110)

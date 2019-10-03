@@ -14,7 +14,8 @@
     "snaptests": "TAP_SNAPSHOT=1 npm test",
     "pretest": "npm run lint && npm run build",
     "test": "tap test/*.spec.js --reporter spec --coverage",
-    "build": "ncc -s -m --no-source-map-register build src/index.js && cp src/*.d.ts dist",
+    "prebuild": "rm -rf dist",
+    "build": "ncc -s -m --no-source-map-register build src/index.ts",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
@@ -23,5 +24,8 @@
     "serve-marked": "^2.0.2",
     "standard": "^14.3.1",
     "tap": "^14.6.9"
+  },
+  "dependencies": {
+    "typescript": "^3.7.0-beta"
   }
 }
