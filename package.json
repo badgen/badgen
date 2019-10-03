@@ -18,10 +18,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.4",
+    "@zeit/ncc": "^0.20.5",
     "benchmark": "^2.1.4",
     "serve-marked": "^2.0.2",
-    "standard": "^14.0.2",
-    "tap": "^14.6.1"
+    "standard": "^14.3.1",
+    "tap": "^14.6.9"
   }
 }

@@ -12,7 +12,8 @@ module.exports = ({
   style,
   icon,
   iconWidth = 13,
-  labelColor = '555'
+  labelColor = '555',
+  scale = 1
 }) => {
   typeAssert(typeof status === 'string', '<status> must be string')
 
@@ -38,7 +39,7 @@ module.exports = ({
   status = sanitize(status)
 
   if (style === 'flat') {
-    return `<svg width="${width / 10}" height="20" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
+    return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
   <g>
     <rect fill="#${labelColor}" width="${sbRectWidth}" height="200"/>
     <rect fill="#${color}" x="${sbRectWidth}" width="${stRectWidth}" height="200"/>
@@ -53,7 +54,7 @@ module.exports = ({
 </svg>`
   }
 
-  return `<svg width="${width / 10}" height="20" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
+  return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>

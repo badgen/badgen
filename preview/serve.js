@@ -9,14 +9,14 @@ const badgen = require('..')
 const icons = require('../test/assets/icon-data-uri.js')
 
 const serveBadge = (req, res) => {
-  const { pathname, searchParams: query } = new url.URL(req.url)
-  const { label, style, icon, iconWidth, labelColor } = qs.parse(query)
+  const { pathname, query } = url.parse(req.url)
+  const { icon, ...queryParams } = qs.parse(query)
   const [subject, status, color] = pathname.split('/').splice(1)
     .map(s => qs.unescape(s))
 
   res.statusCode = 200
   res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
-  res.end(badgen({ label, labelColor, subject, status, color, style, icon: icons[icon], iconWidth }))
+  res.end(badgen({ subject, status, color, icon: icons[icon], ...queryParams }))
 }
 
 const md = fs.readFileSync(path.join(__dirname, 'preview.md'), 'utf8')
