@@ -16,7 +16,7 @@ Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
 `npm install badgen`
 
 ```javascript
-const badgen = require('badgen')
+const { badgen } = require('badgen')
 
 // only `status` is required.
 const svgString = badgen({

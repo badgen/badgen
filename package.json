@@ -8,17 +8,17 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "lint": "standard src/*.js",
     "bench": "node bench/index.js",
     "preview": "node preview/serve.js",
     "snaptests": "TAP_SNAPSHOT=1 npm test",
-    "pretest": "npm run lint && npm run build",
-    "test": "tap test/*.spec.js --reporter spec --coverage",
+    "pretest": "npm run build",
+    "test": "tap test/*.spec.js",
     "prebuild": "rm -rf dist",
     "build": "ncc -s -m --no-source-map-register build src/index.ts",
-    "prepublishOnly": "npm run build"
+    "prepack": "npm run build"
   },
   "devDependencies": {
+    "@types/node": "^12.7.9",
     "@zeit/ncc": "^0.20.5",
     "benchmark": "^2.1.4",
     "serve-marked": "^2.0.2",

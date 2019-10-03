@@ -1,3 +1,4 @@
+export { Verdana110 as calcWidth } from './calc-text-width'
 import { Verdana110 as calcWidth } from './calc-text-width'
 import colorPresets from './color-presets'
 
