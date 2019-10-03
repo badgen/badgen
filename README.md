@@ -57,14 +57,14 @@ Available color names:
 `npm run bench` on iMac 5K (Late 2014), 3.5G i5, with Node.js 12.11.0:
 
 ```bash
-[classic] style, long params x 980,342 ops/sec ±0.36% (95 runs sampled)
-[classic] style, full params x 1,282,650 ops/sec ±0.54% (93 runs sampled)
-[classic] style, with emoji  x 1,286,513 ops/sec ±0.30% (92 runs sampled)
-[classic] style, with icon   x 1,127,749 ops/sec ±0.38% (92 runs sampled)
-   [flat] style, long params x 780,018 ops/sec ±0.32% (93 runs sampled)
-   [flat] style, full params x 1,015,617 ops/sec ±0.27% (96 runs sampled)
-   [flat] style, with emoji  x 1,033,564 ops/sec ±0.51% (95 runs sampled)
-   [flat] style, with icon   x 988,562 ops/sec ±0.33% (96 runs sampled)
+[classic] style, long params x 985,898 ops/sec ±0.37% (94 runs sampled)
+[classic] style, full params x 1,284,886 ops/sec ±0.42% (95 runs sampled)
+[classic] style, with emoji  x 1,291,768 ops/sec ±0.28% (95 runs sampled)
+[classic] style, with icon   x 1,177,120 ops/sec ±0.94% (95 runs sampled)
+   [flat] style, long params x 780,504 ops/sec ±0.39% (94 runs sampled)
+   [flat] style, full params x 1,012,111 ops/sec ±0.40% (97 runs sampled)
+   [flat] style, with emoji  x 1,013,695 ops/sec ±0.91% (95 runs sampled)
+   [flat] style, with icon   x 994,481 ops/sec ±0.30% (94 runs sampled)
 ```
 
 ## See Also
