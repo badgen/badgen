@@ -1,6 +1,6 @@
 {
   "name": "badgen",
-  "version": "2.8.2",
+  "version": "2.9.0",
   "description": "Fast svg badge generator.",
   "repository": "amio/badgen",
   "author": "Amio <amio.cn@gmail.com>",
