@@ -1,6 +1,6 @@
-const tap = require('tap')
-const { badgen } = require('../dist/index.js')
-const icons = require('./assets/icon-data-uri.js')
+import tap from 'tap'
+import { badgen } from '../dist'
+import * as icons from './assets/icon-data-uri.js'
 
 tap.test('generate badge with { label, status }', t => {
   const svg = badgen({ label: 'npm', status: 'v1.0.0' })
@@ -76,6 +76,7 @@ tap.test('generate bare badge with { status, style }', t => {
 })
 
 tap.test('type checking', t => {
+  // @ts-ignore
   t.throws(() => badgen({}), TypeError, 'throw if status is non-string')
   t.end()
 })

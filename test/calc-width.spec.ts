@@ -1,5 +1,5 @@
-const tap = require('tap')
-const calcWidth = require('../dist').calcWidth
+import tap from 'tap'
+import { calcWidth } from '../dist'
 
 tap.test('basic functions', t => {
   t.ok(typeof calcWidth === 'function', 'export calcWidth function')
