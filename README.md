@@ -2,7 +2,7 @@
 
 [![npm version][npm-src]][npm-href]
 [![Coverage Status][coveralls-src]][coveralls-href]
-[![Install size][packagephobia-src]][packagephobia-href]
+[![Bundle size][bundlephobia-src]][bundlephobia-href]
 [![License][license-src]][license-href]
 
 Fast handcraft svg badge generator. Used on [badgen.net](https://badgen.net).
@@ -74,8 +74,8 @@ Available color names:
 
 [npm-src]: https://badgen.net/npm/v/badgen
 [npm-href]: https://www.npmjs.com/package/badgen
-[packagephobia-src]: https://badgen.net/packagephobia/install/badgen
-[packagephobia-href]: https://packagephobia.now.sh/result?p=badgen
+[bundlephobia-src]: https://badgen.net/bundlephobia/minzip/badgen
+[bundlephobia-href]: https://bundlephobia.com/result?p=badgen
 [coveralls-src]: https://badgen.net/coveralls/c/github/amio/badgen/master
 [coveralls-href]: https://coveralls.io/github/amio/badgen?branch=master
 [license-src]: https://badgen.net/github/license/amio/badgen
