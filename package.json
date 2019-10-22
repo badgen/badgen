@@ -23,9 +23,7 @@
     "benchmark": "^2.1.4",
     "serve-marked": "^2.0.2",
     "standard": "^14.3.1",
-    "tap": "^14.6.9"
-  },
-  "dependencies": {
+    "tap": "^14.6.9",
     "typescript": "^3.7.0-beta"
   }
 }
