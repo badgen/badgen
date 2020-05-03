@@ -24,11 +24,11 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@types/node": "^12.12.38",
+    "@types/node": "^14.0.14",
     "benchmark": "^2.1.4",
-    "esbuild": "^0.2.9",
-    "serve-marked": "^2.0.2",
+    "esbuild": "^0.5.23",
+    "serve-marked": "^3.1.0",
     "tap": "^14.10.7",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.6"
   }
 }

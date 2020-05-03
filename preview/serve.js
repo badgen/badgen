@@ -3,8 +3,8 @@ const path = require('path')
 const http = require('http')
 const url = require('url')
 const qs = require('querystring')
-const serveMarked = require('serve-marked')
-const badgen = require('..')
+const serveMarked = require('serve-marked').default
+const { badgen } = require('..')
 
 const icons = require('../test/assets/icon-data-uri.js')
 
@@ -47,7 +47,10 @@ http.createServer((req, res) => {
     case '/favicon.ico':
       return serve404(req, res)
     default:
-      return serveBadge(req, res)
+      if (req.url.split('/').length > 2)
+        return serveBadge(req, res)
+      else
+        return serve404(req, res)
   }
 }).listen(port)
 
