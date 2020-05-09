@@ -47,7 +47,7 @@ Available color names:
 ### In browser
 
 ```html
-<script src="https://bundle.run/badgen"></script>
+<script src="https://unpkg.com/badgen"></script>
 <script>
   var svgString = badgen.badgen({ /*...*/ })
 </script>
