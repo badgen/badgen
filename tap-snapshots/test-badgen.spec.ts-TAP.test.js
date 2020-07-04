@@ -6,7 +6,8 @@
  */
 'use strict'
 exports[`test/badgen.spec.ts TAP generate badge with { label, status } > snapshot 1`] = `
-<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeledby="badgen-npm:-v1.0.0">
+  <title id="badgen-npm:-v1.0.0">npm: v1.0.0</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -28,7 +29,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status } > snapsho
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { label, status, color } > snapshot 1`] = `
-<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeledby="badgen-npm:-v1.0.0">
+  <title id="badgen-npm:-v1.0.0">npm: v1.0.0</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -50,7 +52,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status, color } > 
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { label, status, color, style } > snapshot 1`] = `
-<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeledby="badgen-npm:-v1.0.0">
+  <title id="badgen-npm:-v1.0.0">npm: v1.0.0</title>
   <g>
     <rect fill="#555" width="349" height="200"/>
     <rect fill="#ADF" x="349" width="455" height="200"/>
@@ -66,7 +69,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status, color, sty
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { label, status, icon } > snapshot 1`] = `
-<svg width="95.5" height="20" viewBox="0 0 955 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="95.5" height="20" viewBox="0 0 955 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labeledby="badgen-docker:-icon">
+  <title id="badgen-docker:-icon">docker: icon</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -88,7 +92,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status, icon } > s
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { label, status, icon, style } > snapshot 1`] = `
-<svg width="95.5" height="20" viewBox="0 0 955 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="95.5" height="20" viewBox="0 0 955 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labeledby="badgen-docker:-icon">
+  <title id="badgen-docker:-icon">docker: icon</title>
   <g>
     <rect fill="#555" width="631" height="200"/>
     <rect fill="#08C" x="631" width="324" height="200"/>
@@ -104,7 +109,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status, icon, styl
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { label, status, style } > snapshot 1`] = `
-<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeledby="badgen-npm:-v1.0.0">
+  <title id="badgen-npm:-v1.0.0">npm: v1.0.0</title>
   <g>
     <rect fill="#555" width="349" height="200"/>
     <rect fill="#08C" x="349" width="455" height="200"/>
@@ -120,7 +126,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { label, status, style } > 
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { status, icon } > snapshot 1`] = `
-<svg width="53.6" height="20" viewBox="0 0 536 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="53.6" height="20" viewBox="0 0 536 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labeledby="badgen-:-icon">
+  <title id="badgen-:-icon">: icon</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -142,7 +149,8 @@ exports[`test/badgen.spec.ts TAP generate badge with { status, icon } > snapshot
 `
 
 exports[`test/badgen.spec.ts TAP generate badge with { status, icon, iconWidth } > snapshot 1`] = `
-<svg width="59.6" height="20" viewBox="0 0 596 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="59.6" height="20" viewBox="0 0 596 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labeledby="badgen-:-icon">
+  <title id="badgen-:-icon">: icon</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -200,7 +208,8 @@ exports[`test/badgen.spec.ts TAP generate bare badge with { status, color } > sn
 `
 
 exports[`test/badgen.spec.ts TAP generate bare badge with { status, style } > snapshot 1`] = `
-<svg width="47" height="20" viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="47" height="20" viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeledby="badgen-v1.0.0">
+  <title id="badgen-v1.0.0">v1.0.0</title>
   <g>
     <rect fill="#08C" x="0" width="470" height="200"/>
   </g>
