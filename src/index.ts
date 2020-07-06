@@ -52,7 +52,7 @@ export function badgen ({
   const accessibleText = createAccessibleText({label, status})
 
   if (style === 'flat') {
-    return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${sanitizeAttribute(accessibleText)}">
+    return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${accessibleText}">
   <title>${accessibleText}</title>
   <g>
     <rect fill="#${labelColor}" width="${sbRectWidth}" height="200"/>
@@ -68,7 +68,7 @@ export function badgen ({
 </svg>`
   }
 
-  return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${sanitizeAttribute(accessibleText)}">
+  return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${accessibleText}">
   <title>${accessibleText}</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
@@ -100,7 +100,7 @@ function bare ({ status, color, style }) {
   status = sanitize(status)
 
   if (style === 'flat') {
-    return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeled="${sanitizeAttribute(status)}">
+    return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
   <title>${status}</title>
   <g>
     <rect fill="#${color}" x="0" width="${stRectWidth}" height="200"/>
@@ -112,7 +112,7 @@ function bare ({ status, color, style }) {
 </svg>`
   }
 
-  return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeled="${sanitizeAttribute(status)}">
+  return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
   <title>${status}</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
@@ -131,11 +131,12 @@ function bare ({ status, color, style }) {
 }
 
 function sanitize (str: string): string {
-  return str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;')
-}
-
-function sanitizeAttribute (str: string): string {
-  return str.replace(/\u0022/g, '\"')
+  return str
+    .replace(/\u0026/g, '&amp;')
+    .replace(/\u003C/g, '&lt;')
+    .replace(/\u003E/g, '&gt;')
+    .replace(/\u0022/g, '&quot;')
+    .replace(/\u0027/g, '&apos;')
 }
 
 interface AccessibleTextProps {
