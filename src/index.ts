@@ -49,14 +49,16 @@ export function badgen ({
 
   label = sanitize(label)
   status = sanitize(status)
+  const accessibleText = createAccessibleText({label, status})
 
   if (style === 'flat') {
-    return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
+    return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${sanitizeAttribute(accessibleText)}">
+  <title>${accessibleText}</title>
   <g>
     <rect fill="#${labelColor}" width="${sbRectWidth}" height="200"/>
     <rect fill="#${color}" x="${sbRectWidth}" width="${stRectWidth}" height="200"/>
   </g>
-  <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.1">${label}</text>
     <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${label}</text>
     <text x="${sbRectWidth + 55}" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.1">${status}</text>
@@ -66,7 +68,8 @@ export function badgen ({
 </svg>`
   }
 
-  return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink}>
+  return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${sanitizeAttribute(accessibleText)}">
+  <title>${accessibleText}</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -77,7 +80,7 @@ export function badgen ({
     <rect width="${stRectWidth}" height="200" fill="#${color}" x="${sbRectWidth}"/>
     <rect width="${width}" height="200" fill="url(#a)"/>
   </g>
-  <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.25">${label}</text>
     <text x="${sbTextStart}" y="138" textLength="${sbTextWidth}">${label}</text>
     <text x="${sbRectWidth + 55}" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.25">${status}</text>
@@ -97,18 +100,20 @@ function bare ({ status, color, style }) {
   status = sanitize(status)
 
   if (style === 'flat') {
-    return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg">
+    return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeled="${sanitizeAttribute(status)}">
+  <title>${status}</title>
   <g>
     <rect fill="#${color}" x="0" width="${stRectWidth}" height="200"/>
   </g>
-  <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.1">${status}</text>
     <text x="55" y="138" textLength="${stTextWidth}">${status}</text>
   </g>
 </svg>`
   }
 
-  return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labeled="${sanitizeAttribute(status)}">
+  <title>${status}</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -118,7 +123,7 @@ function bare ({ status, color, style }) {
     <rect width="${stRectWidth}" height="200" fill="#${color}" x="0"/>
     <rect width="${stRectWidth}" height="200" fill="url(#a)"/>
   </g>
-  <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.25">${status}</text>
     <text x="55" y="138" textLength="${stTextWidth}">${status}</text>
   </g>
@@ -127,6 +132,20 @@ function bare ({ status, color, style }) {
 
 function sanitize (str: string): string {
   return str.replace(/\u0026/g, '&amp;').replace(/\u003C/g, '&lt;')
+}
+
+function sanitizeAttribute (str: string): string {
+  return str.replace(/\u0022/g, '\"')
+}
+
+interface AccessibleTextProps {
+  status: string;
+  label?: string;
+}
+
+function createAccessibleText({label, status}: AccessibleTextProps): string {
+  const labelPrefix = label ? `${label}: ` : '';
+  return labelPrefix + status;
 }
 
 function typeAssert (assertion: boolean, message: string): void {
