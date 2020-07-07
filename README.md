@@ -20,14 +20,14 @@ const { badgen } = require('badgen')
 
 // only `status` is required.
 const svgString = badgen({
-  label: 'npm',     // <Text>
-  labelColor: 'ADF' // <Color RGB> or <Color Name> (default: '555')
-  status: 'v1.2.3', // <Text>, required
-  color: 'blue',    // <Color RGB> or <Color Name> (default: 'blue')
-  style: 'flat',    // 'flat' or 'classic' (default: 'classic')
+  label: 'npm',      // <Text>
+  labelColor: 'ADF', // <Color RGB> or <Color Name> (default: '555')
+  status: 'v1.2.3',  // <Text>, required
+  color: 'blue',     // <Color RGB> or <Color Name> (default: 'blue')
+  style: 'flat',     // 'flat' or 'classic' (default: 'classic')
   icon: 'data:image/svg+xml;base64,...', // Use icon (default: undefined)
-  iconWidth: 13,    // Set this if icon is not square (default: 13)
-  scale: 1          // Set badge scale (default: 1)
+  iconWidth: 13,     // Set this if icon is not square (default: 13)
+  scale: 1           // Set badge scale (default: 1)
 })
 ```
 
