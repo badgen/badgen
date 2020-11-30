@@ -31,7 +31,7 @@ export function badgen ({
 
   label = label === undefined ? subject : label // subject is deprecated
   if (!label && !icon) {
-    return bare({ status, color, style })
+    return bare({ status, color, style, scale })
   }
 
   color = colorPresets[color] || color
@@ -90,7 +90,7 @@ export function badgen ({
 </svg>`
 }
 
-function bare ({ status, color, style }) {
+function bare ({ status, color, style, scale }) {
   typeAssert(typeof status === 'string', '<status> must be string')
   color = colorPresets[color] || color || colorPresets.blue
 
@@ -100,7 +100,7 @@ function bare ({ status, color, style }) {
   status = sanitize(status)
 
   if (style === 'flat') {
-    return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
+    return `<svg width="${scale * stRectWidth / 10}" height="${scale * 20}" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
   <title>${status}</title>
   <g>
     <rect fill="#${color}" x="0" width="${stRectWidth}" height="200"/>
@@ -112,7 +112,7 @@ function bare ({ status, color, style }) {
 </svg>`
   }
 
-  return `<svg width="${stRectWidth / 10}" height="20" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
+  return `<svg width="${scale * stRectWidth / 10}" height="${scale * 20}" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
   <title>${status}</title>
   <linearGradient id="a" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
