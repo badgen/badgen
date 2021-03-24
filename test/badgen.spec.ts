@@ -54,6 +54,18 @@ tap.test('generate badge with { label, status, icon, style }', t => {
   t.end()
 })
 
+tap.test('ensure badgen() correctly escapes string inputs', t => {
+  const svg = badgen({
+    label: '<escape me>',
+    status: '<escape me>',
+    color: '<escape me>',
+    icon: '<escape me>',
+    labelColor: '<escape me>',
+  })
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
 tap.test('generate bare badge with { status }', t => {
   const svg = badgen({ status: 'v1.0.0' })
   t.ok(typeof svg === 'string', 'successfully generated')
@@ -71,6 +83,15 @@ tap.test('generate bare badge with { status, color }', t => {
 tap.test('generate bare badge with { status, style }', t => {
   const svg = badgen({ status: 'v1.0.0', style: 'flat' })
   t.ok(typeof svg === 'string', 'successfully generated')
+  t.matchSnapshot(svg, 'snapshot')
+  t.end()
+})
+
+tap.test('ensure bare() correctly escapes string inputs', t => {
+  const svg = badgen({
+    status: '<escape me>',
+    color: '<escape me>',
+  })
   t.matchSnapshot(svg, 'snapshot')
   t.end()
 })

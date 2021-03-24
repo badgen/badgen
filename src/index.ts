@@ -49,6 +49,9 @@ export function badgen ({
 
   label = sanitize(label)
   status = sanitize(status)
+  color = sanitize(color)
+  labelColor = sanitize(labelColor)
+  icon = icon ? sanitize(icon) : icon
   const accessibleText = createAccessibleText({label, status})
 
   if (style === 'flat') {
@@ -98,6 +101,7 @@ function bare ({ status, color, style, scale }) {
   const stRectWidth = stTextWidth + 115
 
   status = sanitize(status)
+  color = sanitize(color)
 
   if (style === 'flat') {
     return `<svg width="${scale * stRectWidth / 10}" height="${scale * 20}" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
