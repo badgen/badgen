@@ -5,6 +5,48 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/badgen.spec.ts TAP ensure badgen() correctly escapes string inputs > snapshot 1`] = `
+<svg width="191.2" height="20" viewBox="0 0 1912 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="&lt;escape me&gt;: &lt;escape me&gt;">
+  <title>&lt;escape me&gt;: &lt;escape me&gt;</title>
+  <linearGradient id="a" x2="0" y2="100%">
+    <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <mask id="m"><rect width="1912" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#m)">
+    <rect width="1036" height="200" fill="#&lt;escape me&gt;"/>
+    <rect width="876" height="200" fill="#&lt;escape me&gt;" x="1036"/>
+    <rect width="1912" height="200" fill="url(#a)"/>
+  </g>
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="220" y="148" textLength="776" fill="#000" opacity="0.25">&lt;escape me&gt;</text>
+    <text x="210" y="138" textLength="776">&lt;escape me&gt;</text>
+    <text x="1091" y="148" textLength="776" fill="#000" opacity="0.25">&lt;escape me&gt;</text>
+    <text x="1081" y="138" textLength="776">&lt;escape me&gt;</text>
+  </g>
+  <image x="40" y="35" width="130" height="130" xlink:href="&lt;escape me&gt;"/>
+</svg>
+`
+
+exports[`test/badgen.spec.ts TAP ensure bare() correctly escapes string inputs > snapshot 1`] = `
+<svg width="89.1" height="20" viewBox="0 0 891 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="&lt;escape me&gt;">
+  <title>&lt;escape me&gt;</title>
+  <linearGradient id="a" x2="0" y2="100%">
+    <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <mask id="m"><rect width="891" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#m)">
+    <rect width="891" height="200" fill="#&lt;escape me&gt;" x="0"/>
+    <rect width="891" height="200" fill="url(#a)"/>
+  </g>
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="65" y="148" textLength="776" fill="#000" opacity="0.25">&lt;escape me&gt;</text>
+    <text x="55" y="138" textLength="776">&lt;escape me&gt;</text>
+  </g>
+</svg>
+`
+
 exports[`test/badgen.spec.ts TAP generate badge with { label, status } > snapshot 1`] = `
 <svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="npm: v1.0.0">
   <title>npm: v1.0.0</title>
