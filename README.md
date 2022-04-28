@@ -49,7 +49,7 @@ Available color names:
 ```html
 <script src="https://unpkg.com/badgen"></script>
 <script>
-  var svgString = badgen.badgen({ /*...*/ })
+  var svgString = badgen({ /*...*/ })
 </script>
 ```
 
