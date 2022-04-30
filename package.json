@@ -13,7 +13,7 @@
     "preview": "node preview/serve.js",
     "snaptests": "TAP_SNAPSHOT=1 npm test",
     "pretest": "npm run build",
-    "test": "tap",
+    "test": "tap --no-check-coverage",
     "prebuild": "rm -rf dist",
     "esbuild": "esbuild src/index.ts --bundle --minify --sourcemap",
     "build:types": "tsc --emitDeclarationOnly",
