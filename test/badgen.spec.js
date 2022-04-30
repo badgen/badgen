@@ -1,6 +1,6 @@
-import tap from 'tap'
-import { badgen } from '../dist'
-import * as icons from './assets/icon-data-uri.js'
+const tap = require('tap')
+const { badgen } = require('../dist')
+const icons = require('./assets/icon-data-uri.js')
 
 tap.test('generate badge with { label, status }', t => {
   const svg = badgen({ label: 'npm', status: 'v1.0.0' })
