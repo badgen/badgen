@@ -10,4 +10,4 @@ export default {
   gray: '999',
   cyan: '1BC',
   black: '2A2A2A'
-}
+} as Record<string, string>
