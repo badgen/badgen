@@ -48,7 +48,7 @@ export function badgen ({
   const width = sbRectWidth + stRectWidth
   const xlink = icon ? ' xmlns:xlink="http://www.w3.org/1999/xlink"' : ''
 
-  label = label ? sanitize(label) : undefined
+  label = label ? sanitize(label) : ''
   status = sanitize(status)
   color = sanitize(color)
   labelColor = sanitize(labelColor)

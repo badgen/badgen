@@ -181,8 +181,8 @@ exports[`test/badgen.spec.js TAP generate badge with { status, icon } > snapshot
     <rect width="536" height="200" fill="url(#a)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
-    <text x="172" y="148" textLength="0" fill="#000" opacity="0.25">undefined</text>
-    <text x="162" y="138" textLength="0">undefined</text>
+    <text x="172" y="148" textLength="0" fill="#000" opacity="0.25"></text>
+    <text x="162" y="138" textLength="0"></text>
     <text x="267" y="148" textLength="224" fill="#000" opacity="0.25">icon</text>
     <text x="257" y="138" textLength="224">icon</text>
   </g>
@@ -204,8 +204,8 @@ exports[`test/badgen.spec.js TAP generate badge with { status, icon, iconWidth }
     <rect width="596" height="200" fill="url(#a)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
-    <text x="232" y="148" textLength="0" fill="#000" opacity="0.25">undefined</text>
-    <text x="222" y="138" textLength="0">undefined</text>
+    <text x="232" y="148" textLength="0" fill="#000" opacity="0.25"></text>
+    <text x="222" y="138" textLength="0"></text>
     <text x="327" y="148" textLength="224" fill="#000" opacity="0.25">icon</text>
     <text x="317" y="138" textLength="224">icon</text>
   </g>
