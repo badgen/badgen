@@ -3,11 +3,12 @@ import { Verdana110 as calcWidth } from './calc-text-width'
 import colorPresets from './color-presets'
 
 type StyleOption = 'flat' | 'classic'
+type ColorPreset = keyof typeof colorPresets
 
 interface BadgenOptions {
   status: string;
   subject?: string;
-  color?: string;
+  color?: ColorPreset;
   label?: string;
   labelColor?: string
   style?: StyleOption;
@@ -38,16 +39,16 @@ export function badgen ({
   labelColor = colorPresets[labelColor] || labelColor
   iconWidth = iconWidth * 10
 
-  const iconSpanWidth = icon ? (label.length ? iconWidth + 30 : iconWidth - 18) : 0
+  const iconSpanWidth = icon ? (label?.length ? iconWidth + 30 : iconWidth - 18) : 0
   const sbTextStart = icon ? (iconSpanWidth + 50) : 50
-  const sbTextWidth = calcWidth(label)
+  const sbTextWidth = label ? calcWidth(label) : 0
   const stTextWidth = calcWidth(status)
   const sbRectWidth = sbTextWidth + 100 + iconSpanWidth
   const stRectWidth = stTextWidth + 100
   const width = sbRectWidth + stRectWidth
   const xlink = icon ? ' xmlns:xlink="http://www.w3.org/1999/xlink"' : ''
 
-  label = sanitize(label)
+  label = label ? sanitize(label) : undefined
   status = sanitize(status)
   color = sanitize(color)
   labelColor = sanitize(labelColor)
@@ -93,7 +94,7 @@ export function badgen ({
 </svg>`
 }
 
-function bare ({ status, color, style, scale }) {
+function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
   typeAssert(typeof status === 'string', '<status> must be string')
   color = colorPresets[color] || color || colorPresets.blue
 

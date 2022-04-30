@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+
     "target": "es2017",
     "module": "commonjs",
     "lib": ["esnext", "dom"],
@@ -12,7 +14,8 @@
 
     "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
   },
   "include": ["src"]
 }
