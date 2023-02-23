@@ -2,10 +2,10 @@ export { Verdana110 as calcWidth } from './calc-text-width'
 import { Verdana110 as calcWidth } from './calc-text-width'
 import colorPresets from './color-presets'
 
-type StyleOption = 'flat' | 'classic'
-type ColorPreset = keyof typeof colorPresets
+export type StyleOption = 'flat' | 'classic'
+export type ColorPreset = keyof typeof colorPresets
 
-interface BadgenOptions {
+export interface BadgenOptions {
   status: string;
   subject?: string;
   color?: ColorPreset;
