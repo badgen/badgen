@@ -2,6 +2,13 @@ const tap = require('tap')
 const { badgen } = require('../dist')
 const icons = require('./assets/icon-data-uri.js')
 
+const originalMath = global.Math
+const mockMath = Object.create(global.Math)
+mockMath.random = () => 0.5
+
+tap.beforeEach(async t => { global.Math = mockMath })
+tap.afterEach(async t => { global.Math = originalMath })
+
 tap.test('generate badge with { label, status }', t => {
   const svg = badgen({ label: 'npm', status: 'v1.0.0' })
   t.ok(typeof svg === 'string', 'successfully generated')

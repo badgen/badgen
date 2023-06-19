@@ -8,15 +8,15 @@
 exports[`test/badgen.spec.js TAP ensure badgen() correctly escapes string inputs > snapshot 1`] = `
 <svg width="191.2" height="20" viewBox="0 0 1912 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="&lt;escape me&gt;: &lt;escape me&gt;">
   <title>&lt;escape me&gt;: &lt;escape me&gt;</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="1912" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="1912" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="1036" height="200" fill="#&lt;escape me&gt;"/>
     <rect width="876" height="200" fill="#&lt;escape me&gt;" x="1036"/>
-    <rect width="1912" height="200" fill="url(#a)"/>
+    <rect width="1912" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="220" y="148" textLength="776" fill="#000" opacity="0.25">&lt;escape me&gt;</text>
@@ -31,14 +31,14 @@ exports[`test/badgen.spec.js TAP ensure badgen() correctly escapes string inputs
 exports[`test/badgen.spec.js TAP ensure bare() correctly escapes string inputs > snapshot 1`] = `
 <svg width="89.1" height="20" viewBox="0 0 891 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="&lt;escape me&gt;">
   <title>&lt;escape me&gt;</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="891" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="891" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="891" height="200" fill="#&lt;escape me&gt;" x="0"/>
-    <rect width="891" height="200" fill="url(#a)"/>
+    <rect width="891" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="776" fill="#000" opacity="0.25">&lt;escape me&gt;</text>
@@ -50,15 +50,15 @@ exports[`test/badgen.spec.js TAP ensure bare() correctly escapes string inputs >
 exports[`test/badgen.spec.js TAP generate badge with { label, status } > snapshot 1`] = `
 <svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="npm: v1.0.0">
   <title>npm: v1.0.0</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="804" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="804" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="349" height="200" fill="#555"/>
     <rect width="455" height="200" fill="#08C" x="349"/>
-    <rect width="804" height="200" fill="url(#a)"/>
+    <rect width="804" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="60" y="148" textLength="249" fill="#000" opacity="0.25">npm</text>
@@ -73,15 +73,15 @@ exports[`test/badgen.spec.js TAP generate badge with { label, status } > snapsho
 exports[`test/badgen.spec.js TAP generate badge with { label, status, color } > snapshot 1`] = `
 <svg width="80.4" height="20" viewBox="0 0 804 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="npm: v1.0.0">
   <title>npm: v1.0.0</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="804" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="804" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="349" height="200" fill="#555"/>
     <rect width="455" height="200" fill="#ADF" x="349"/>
-    <rect width="804" height="200" fill="url(#a)"/>
+    <rect width="804" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="60" y="148" textLength="249" fill="#000" opacity="0.25">npm</text>
@@ -113,15 +113,15 @@ exports[`test/badgen.spec.js TAP generate badge with { label, status, color, sty
 exports[`test/badgen.spec.js TAP generate badge with { label, status, icon } > snapshot 1`] = `
 <svg width="95.5" height="20" viewBox="0 0 955 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="docker: icon">
   <title>docker: icon</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="955" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="955" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="631" height="200" fill="#555"/>
     <rect width="324" height="200" fill="#08C" x="631"/>
-    <rect width="955" height="200" fill="url(#a)"/>
+    <rect width="955" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="220" y="148" textLength="371" fill="#000" opacity="0.25">docker</text>
@@ -170,15 +170,15 @@ exports[`test/badgen.spec.js TAP generate badge with { label, status, style } > 
 exports[`test/badgen.spec.js TAP generate badge with { status, icon } > snapshot 1`] = `
 <svg width="53.6" height="20" viewBox="0 0 536 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="icon">
   <title>icon</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="536" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="536" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="212" height="200" fill="#555"/>
     <rect width="324" height="200" fill="#08C" x="212"/>
-    <rect width="536" height="200" fill="url(#a)"/>
+    <rect width="536" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="172" y="148" textLength="0" fill="#000" opacity="0.25"></text>
@@ -193,15 +193,15 @@ exports[`test/badgen.spec.js TAP generate badge with { status, icon } > snapshot
 exports[`test/badgen.spec.js TAP generate badge with { status, icon, iconWidth } > snapshot 1`] = `
 <svg width="59.6" height="20" viewBox="0 0 596 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="icon">
   <title>icon</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="596" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="596" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="272" height="200" fill="#555"/>
     <rect width="324" height="200" fill="#08C" x="272"/>
-    <rect width="596" height="200" fill="url(#a)"/>
+    <rect width="596" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="232" y="148" textLength="0" fill="#000" opacity="0.25"></text>
@@ -216,14 +216,14 @@ exports[`test/badgen.spec.js TAP generate badge with { status, icon, iconWidth }
 exports[`test/badgen.spec.js TAP generate bare badge with { status } > snapshot 1`] = `
 <svg width="47" height="20" viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="v1.0.0">
   <title>v1.0.0</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="470" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="470" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="470" height="200" fill="#08C" x="0"/>
-    <rect width="470" height="200" fill="url(#a)"/>
+    <rect width="470" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="355" fill="#000" opacity="0.25">v1.0.0</text>
@@ -235,14 +235,14 @@ exports[`test/badgen.spec.js TAP generate bare badge with { status } > snapshot 
 exports[`test/badgen.spec.js TAP generate bare badge with { status, color } > snapshot 1`] = `
 <svg width="47" height="20" viewBox="0 0 470 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="v1.0.0">
   <title>v1.0.0</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="aaaaa" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="470" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="aaaaa"><rect width="470" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#aaaaa)">
     <rect width="470" height="200" fill="#ADF" x="0"/>
-    <rect width="470" height="200" fill="url(#a)"/>
+    <rect width="470" height="200" fill="url(#aaaaa)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="355" fill="#000" opacity="0.25">v1.0.0</text>
