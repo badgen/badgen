@@ -48,6 +48,9 @@ export function badgen ({
   const width = sbRectWidth + stRectWidth
   const xlink = icon ? ' xmlns:xlink="http://www.w3.org/1999/xlink"' : ''
 
+  const gradientId = generateRandomID(5)
+  const maskId = generateRandomID(5)
+
   label = label ? sanitize(label) : ''
   status = sanitize(status)
   color = sanitize(color)
@@ -74,15 +77,15 @@ export function badgen ({
 
   return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${accessibleText}">
   <title>${accessibleText}</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="${gradientId}" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="${width}" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="${maskId}"><rect width="${width}" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#${maskId})">
     <rect width="${sbRectWidth}" height="200" fill="#${labelColor}"/>
     <rect width="${stRectWidth}" height="200" fill="#${color}" x="${sbRectWidth}"/>
-    <rect width="${width}" height="200" fill="url(#a)"/>
+    <rect width="${width}" height="200" fill="url(#${gradientId})"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="${sbTextStart + 10}" y="148" textLength="${sbTextWidth}" fill="#000" opacity="0.25">${label}</text>
@@ -100,6 +103,9 @@ function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
 
   const stTextWidth = calcWidth(status)
   const stRectWidth = stTextWidth + 115
+
+  const gradientId = generateRandomID(5)
+  const maskId = generateRandomID(5)
 
   status = sanitize(status)
   color = sanitize(color)
@@ -119,14 +125,14 @@ function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
 
   return `<svg width="${scale * stRectWidth / 10}" height="${scale * 20}" viewBox="0 0 ${stRectWidth} 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${status}">
   <title>${status}</title>
-  <linearGradient id="a" x2="0" y2="100%">
+  <linearGradient id="${gradientId}" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="m"><rect width="${stRectWidth}" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#m)">
+  <mask id="${maskId}"><rect width="${stRectWidth}" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#${maskId})">
     <rect width="${stRectWidth}" height="200" fill="#${color}" x="0"/>
-    <rect width="${stRectWidth}" height="200" fill="url(#a)"/>
+    <rect width="${stRectWidth}" height="200" fill="url(#${gradientId})"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="65" y="148" textLength="${stTextWidth}" fill="#000" opacity="0.25">${status}</text>
@@ -147,6 +153,17 @@ function sanitize (str: string): string {
 interface AccessibleTextProps {
   status: string;
   label?: string;
+}
+
+function generateRandomID(length: number): string {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let result = '';
+
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+
+  return result;
 }
 
 function createAccessibleText({label, status}: AccessibleTextProps): string {
