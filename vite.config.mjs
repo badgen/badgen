@@ -120,6 +120,7 @@ export default {
         {
           format: 'iife',
           name: '__badgenBundle',
+          exports: 'named',
           entryFileNames: 'index.browser.js',
           footer: 'window.badgen = __badgenBundle.badgen;'
         }

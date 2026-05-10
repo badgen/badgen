@@ -3,7 +3,6 @@ const assert = require('node:assert/strict')
 const fs = require('node:fs')
 const path = require('node:path')
 const vm = require('node:vm')
-const { pathToFileURL } = require('node:url')
 const { badgen } = require('../dist')
 const icons = require('./assets/icon-data-uri.js')
 const { matchSnapshot } = require('./snapshot')
@@ -138,15 +137,16 @@ test('type checking', () => {
 })
 
 test('supports Node ESM import', async () => {
-  const moduleUrl = pathToFileURL(path.join(__dirname, '..', 'dist', 'index.mjs')).href
-  const imported = await import(moduleUrl)
+  const imported = await import('badgen')
 
   assert.equal(typeof imported.badgen, 'function')
   assert.equal(typeof imported.calcWidth, 'function')
+  assert.equal(typeof imported.default, 'function')
+  assert.equal(imported.default, imported.badgen)
 
   withDeterministicRandom(() => {
     assert.equal(
-      imported.badgen({ label: 'npm', status: 'v1.0.0' }),
+      imported.default({ label: 'npm', status: 'v1.0.0' }),
       badgen({ label: 'npm', status: 'v1.0.0' })
     )
   })

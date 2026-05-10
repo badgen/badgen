@@ -126,6 +126,8 @@ export function badgen ({
 </svg>`
 }
 
+export default badgen
+
 function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
   typeAssert(typeof status === 'string', '<status> must be string')
   color = colorPresets[color] || color || colorPresets.blue
