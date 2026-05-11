@@ -4,3 +4,9 @@ test
 bench
 preview
 tap-snapshots
+coverage
+.nyc_output
+*.log
+*.tgz
+tsconfig.json
+vite.config.mjs

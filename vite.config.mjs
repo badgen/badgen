@@ -101,8 +101,9 @@ function createPreviewMiddleware(loadBadgen) {
 
 export default {
   build: {
-    sourcemap: true,
-    emptyOutDir: false,
+    target: 'es2017',
+    sourcemap: false,
+    emptyOutDir: true,
     lib: {
       entry: path.join(__dirname, 'src', 'index.ts')
     },

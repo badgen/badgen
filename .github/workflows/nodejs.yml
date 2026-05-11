@@ -1,26 +1,40 @@
 name: Node CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: node-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
-
-    strategy:
-      matrix:
-        node: [22, 26]
-        os: [ubuntu-latest]
-
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24, 26]
+        os: [ubuntu-latest]
+
     steps:
-    - uses: actions/checkout@v6
-    - name: use Node.js ${{ matrix.node }} on ${{ matrix.os }}
-      uses: actions/setup-node@v6
-      with:
-        node-version: ${{ matrix.node }}
-    - name: Run npm ci
-      run: npm ci
-    - name: Run npm build
-      run: npm run build --ifpresent
-    - name: Run npm test
-      run: npm test
+      - uses: actions/checkout@v6
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --audit=false --fund=false
+      - name: Audit dependencies
+        run: npm audit --audit-level=moderate
+      - name: Build and test
+        run: npm test

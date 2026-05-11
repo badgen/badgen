@@ -5,6 +5,9 @@
   "repository": "badgen/badgen",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,13 +24,14 @@
     "bench": "node bench/index.js",
     "preview": "vite",
     "snaptests": "TAP_SNAPSHOT=1 npm test",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
     "pretest": "npm run build",
     "test": "node --test test/*.spec.js",
-    "prebuild": "rm -rf dist",
     "build:types": "tsc --emitDeclarationOnly",
     "build": "vite build",
     "postbuild": "npm run build:types",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "pack:check": "npm pack --dry-run"
   },
   "devDependencies": {
     "@types/node": "^25.6.2",

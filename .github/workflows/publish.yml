@@ -3,32 +3,48 @@ name: Publish Package
 on:
   push:
     tags:
-      - 'v*' # Trigger on version tags, e.g., v1.0.0
+      - 'v*'
 
 permissions:
-  id-token: write # Required for OIDC
-  contents: write # Allows checking out the repository code and creating releases
+  contents: write
+  id-token: write
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   publish:
+    name: Publish npm package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org' # Specifies the npm registry
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-      - run: unset NODE_AUTH_TOKEN; unset NPM_TOKEN # Unset the default token set by "actions/setup-node" to get OIDC publishing working
-      - run: npm publish # The npm CLI automatically uses the OIDC token
-
+          registry-url: 'https://registry.npmjs.org'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --audit=false --fund=false
+      - name: Verify tag matches package version
+        run: node -e "const version=require('./package.json').version; const tag=process.env.GITHUB_REF_NAME; const expected='v'+version; if (tag !== expected) throw new Error('Tag '+tag+' does not match package version '+expected);"
+      - name: Audit dependencies
+        run: npm audit --audit-level=moderate
+      - name: Build and test
+        run: npm test
+      - name: Verify published package contents
+        run: npm run pack:check
+      - name: Publish to npm with provenance
+        run: |
+          unset NODE_AUTH_TOKEN
+          unset NPM_TOKEN
+          npm publish --provenance
       - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" \
             --title "$GITHUB_REF_NAME" \
-            --generate-notes
+            --generate-notes \
+            --verify-tag
