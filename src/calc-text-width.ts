@@ -1,16 +1,15 @@
 import widthsVerdana110 from './widths-verdana-110.json'
 
-const calcWidth = (charWidthTable: number[]) => {
-  const fallbackWidth = charWidthTable[64] // Width as "@" for overflows
+const calcWidth = (charWidthTable: readonly number[]): ((text: string) => number) => {
+  const fallbackWidth = charWidthTable[64] ?? 110 // Width as "@" for overflows
 
-  return ([...text]) => {
+  return (text: string): number => {
     let total = 0
-    let charWidth = 0
-    let i = text.length
-    while (i--) {
-      charWidth = charWidthTable[text[i].charCodeAt()]
-      total += charWidth === undefined ? fallbackWidth : charWidth
+
+    for (const char of text) {
+      total += charWidthTable[char.charCodeAt(0)] ?? fallbackWidth
     }
+
     return total
   }
 }

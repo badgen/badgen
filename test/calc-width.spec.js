@@ -34,3 +34,32 @@ test('calc width for accented characters', () => {
 test('calc width for emojis', () => {
   matchSnapshot(snapshotFile, snapshotKey('calc width for emojis'), calcWidth('💩🤱🦄'))
 })
+
+test('calc width for long repeated strings is linear', () => {
+  const char = 'a'
+  const input = char.repeat(10000)
+
+  assert.equal(calcWidth(input), calcWidth(char) * input.length)
+})
+
+test('calc width for mixed unicode, ZWJ emoji and combining marks is finite', () => {
+  for (const sample of [
+    '👩‍💻🇺🇳❤️',
+    'Café café naïve soufflé',
+    'Καλημέρα こんにちは مرحبا',
+    'क्‍ष 한글 測試',
+  ]) {
+    const width = calcWidth(sample)
+
+    assert.equal(Number.isFinite(width), true)
+    assert.equal(width > 0, true)
+    assert.equal(width, calcWidth(sample), 'width calculation should be deterministic')
+  }
+})
+
+test('calc width for XML and attribute metacharacters is deterministic', () => {
+  const sample = '&<>"\''
+  const expected = [...sample].reduce((total, char) => total + calcWidth(char), 0)
+
+  assert.equal(calcWidth(sample), expected)
+})

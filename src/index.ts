@@ -28,8 +28,9 @@ function colorBrightness (hex: string): number {
   const r = parseInt(hex.slice(0, 2), 16)
   const g = parseInt(hex.slice(2, 4), 16)
   const b = parseInt(hex.slice(4, 6), 16)
+  const brightness = (r * 299 + g * 587 + b * 114) / 255000
 
-  return (r * 299 + g * 587 + b * 114) / 255000
+  return Number.isFinite(brightness) ? brightness : 1
 }
 
 /**
@@ -55,14 +56,21 @@ export function badgen ({
   scale = 1
 }: BadgenOptions) {
   typeAssert(typeof status === 'string', '<status> must be string')
+  typeAssert(label === undefined || typeof label === 'string', '<label> must be string')
+  typeAssert(subject === undefined || typeof subject === 'string', '<subject> must be string')
+  typeAssert(typeof color === 'string', '<color> must be string')
+  typeAssert(typeof labelColor === 'string', '<labelColor> must be string')
+  typeAssert(icon === undefined || typeof icon === 'string', '<icon> must be string')
+  typeAssert(Number.isFinite(iconWidth), '<iconWidth> must be finite number')
+  typeAssert(Number.isFinite(scale), '<scale> must be finite number')
 
   label = label === undefined ? subject : label // subject is deprecated
   if (!label && !icon) {
     return bare({ status, color, style, scale })
   }
 
-  color = colorPresets[color] || color
-  labelColor = colorPresets[labelColor] || labelColor
+  color = resolveColor(color)
+  labelColor = resolveColor(labelColor)
   iconWidth = iconWidth * 10
 
   const { textColor: labelTextColor, shadowColor: labelShadowColor } = colorsForBackground(labelColor)
@@ -85,7 +93,7 @@ export function badgen ({
   color = sanitize(color)
   labelColor = sanitize(labelColor)
   icon = icon ? sanitize(icon) : icon
-  const accessibleText = createAccessibleText({label, status})
+  const accessibleText = createAccessibleText(label, status)
 
   if (style === 'flat') {
     return `<svg width="${scale * width / 10}" height="${scale * 20}" viewBox="0 0 ${width} 200" xmlns="http://www.w3.org/2000/svg"${xlink} role="img" aria-label="${accessibleText}">
@@ -130,7 +138,7 @@ export default badgen
 
 function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
   typeAssert(typeof status === 'string', '<status> must be string')
-  color = colorPresets[color] || color || colorPresets.blue
+  color = resolveColor(color || colorPresets.blue)
 
   const { textColor: statusTextColor, shadowColor: statusShadowColor } = colorsForBackground(color)
 
@@ -174,18 +182,23 @@ function bare ({ status, color = 'blue', style, scale = 1 }: BadgenOptions) {
 </svg>`
 }
 
-function sanitize (str: string): string {
-  return str
-    .replace(/\u0026/g, '&amp;')
-    .replace(/\u003C/g, '&lt;')
-    .replace(/\u003E/g, '&gt;')
-    .replace(/\u0022/g, '&quot;')
-    .replace(/\u0027/g, '&apos;')
+const xmlEscapePattern = /[&<>"']/g
+const xmlEscapes: Record<string, string> = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&apos;'
 }
 
-interface AccessibleTextProps {
-  status: string;
-  label?: string;
+const hasOwn = Object.prototype.hasOwnProperty
+
+function sanitize (str: string): string {
+  return str.replace(xmlEscapePattern, char => xmlEscapes[char])
+}
+
+function resolveColor (color: string): string {
+  return hasOwn.call(colorPresets, color) ? colorPresets[color] : color
 }
 
 function generateRandomID(length: number): string {
@@ -199,9 +212,9 @@ function generateRandomID(length: number): string {
   return result;
 }
 
-function createAccessibleText({label, status}: AccessibleTextProps): string {
-  const labelPrefix = label ? `${label}: ` : '';
-  return labelPrefix + status;
+function createAccessibleText (label: string, status: string): string {
+  const labelPrefix = label ? `${label}: ` : ''
+  return labelPrefix + status
 }
 
 function typeAssert (assertion: boolean, message: string): void {

@@ -24,6 +24,49 @@ function withDeterministicRandom(run) {
   }
 }
 
+function getSvgAttribute(svg, name) {
+  const root = svg.match(/^<svg\b[^>]*>/)
+
+  assert.ok(root, 'SVG root element should be present')
+
+  const match = root[0].match(new RegExp(`\\b${name}="([^"]+)"`))
+
+  assert.ok(match, `SVG root should expose ${name}`)
+
+  return match[1]
+}
+
+function assertSvgDimensionsAreFinite(svg) {
+  const viewBox = getSvgAttribute(svg, 'viewBox').split(/\s+/)
+
+  assert.equal(viewBox.length, 4, 'SVG viewBox should expose four dimensions')
+  assert.doesNotMatch(
+    svg,
+    /\b(?:NaN|Infinity|-Infinity)\b/,
+    'SVG should not contain non-finite numbers'
+  )
+
+  for (const [name, value] of [
+    ['width', getSvgAttribute(svg, 'width')],
+    ['height', getSvgAttribute(svg, 'height')],
+    ['viewBox width', viewBox[2]],
+    ['viewBox height', viewBox[3]],
+  ]) {
+    assert.equal(Number.isFinite(Number(value)), true, `${name} should be finite`)
+  }
+}
+
+function getEmbeddedImageHref(svg) {
+  const imageTags = svg.match(/<image\b[^>]*\/>/g) || []
+
+  assert.equal(imageTags.length, 1, 'SVG should contain exactly one embedded image')
+
+  const href = imageTags[0].match(/\bxlink:href="([^"]*)"/)
+  assert.ok(href, 'embedded image should expose xlink:href')
+
+  return href[1]
+}
+
 test('generate badge with { label, status }', () => {
   withDeterministicRandom(() => {
     const svg = badgen({ label: 'npm', status: 'v1.0.0' })
@@ -95,6 +138,129 @@ test('ensure badgen() correctly escapes string inputs', () => {
     })
     matchSnapshot(snapshotFile, snapshotKey('ensure badgen() correctly escapes string inputs'), svg)
   })
+})
+
+test('escapes XML metacharacters in text and accessible labels', () => {
+  withDeterministicRandom(() => {
+    const payload = `"><script>alert('x')</script>&<tag>`
+    const escapedPayload = [
+      '&quot;&gt;',
+      '&lt;script&gt;alert(&apos;x&apos;)&lt;/script&gt;',
+      '&amp;&lt;tag&gt;'
+    ].join('')
+    const svg = badgen({ label: payload, status: payload })
+    const accessibleText = `${escapedPayload}: ${escapedPayload}`
+
+    assertSvgDimensionsAreFinite(svg)
+    assert.ok(svg.includes(escapedPayload), 'text payload should be entity-escaped')
+    assert.ok(svg.includes(`<title>${accessibleText}</title>`), 'title should use escaped text')
+    assert.ok(svg.includes(`aria-label="${accessibleText}"`), 'aria-label should use escaped text')
+    assert.doesNotMatch(svg, /<script\b/i, 'script tags must not be emitted from text payloads')
+    assert.doesNotMatch(svg, /<tag\b/i, 'arbitrary XML tags must not be emitted from text payloads')
+  })
+})
+
+test('escapes attribute-breaking color values', () => {
+  withDeterministicRandom(() => {
+    const payload = `bad" onload="alert(1)`
+    const svg = badgen({
+      label: 'color',
+      status: 'safe',
+      color: payload,
+      labelColor: payload
+    })
+
+    assertSvgDimensionsAreFinite(svg)
+    assert.ok(
+      svg.includes('fill="#bad&quot; onload=&quot;alert(1)"'),
+      'color payload should be escaped inside fill attributes'
+    )
+    assert.doesNotMatch(
+      svg,
+      /fill="#[^"]*"\s+onload=/i,
+      'color payload must not break out into an onload attribute'
+    )
+  })
+})
+
+test('escapes malicious icon data before embedding in xlink:href', () => {
+  withDeterministicRandom(() => {
+    const payload = [
+      `data:image/svg+xml,<svg onload="alert('x')"></svg>`,
+      `" /><script>alert(1)</script>`
+    ].join('')
+    const svg = badgen({ label: 'icon', status: 'safe', icon: payload })
+    const href = getEmbeddedImageHref(svg)
+    const escapedIconFragment = '&lt;svg onload=&quot;alert(&apos;x&apos;)&quot;&gt;&lt;/svg&gt;'
+    const escapedScriptFragment = '&lt;script&gt;alert(1)&lt;/script&gt;'
+
+    assertSvgDimensionsAreFinite(svg)
+    assert.ok(href.includes(escapedIconFragment), 'icon SVG markup should be escaped')
+    assert.ok(href.includes(escapedScriptFragment), 'script markup in icon data should be escaped')
+    assert.doesNotMatch(svg, /<script\b/i, 'script tags must not be emitted from icon payloads')
+    assert.doesNotMatch(
+      svg,
+      /<svg\s+onload=/i,
+      'icon payload must not emit an executable nested SVG tag'
+    )
+  })
+})
+
+test('handles long mixed unicode and emoji inputs without invalid dimensions', () => {
+  withDeterministicRandom(() => {
+    const longLabel = `${'build-'.repeat(512)}${'🚀'.repeat(64)}`
+    const longStatus = `${'passed-'.repeat(512)}${'測試'.repeat(128)}${'👩‍💻'.repeat(64)}`
+    const svg = badgen({
+      label: longLabel,
+      status: longStatus,
+      color: 'green',
+      style: 'flat',
+      scale: 0.5
+    })
+
+    assertSvgDimensionsAreFinite(svg)
+    assert.ok(svg.includes('🚀'), 'emoji label content should be preserved')
+    assert.ok(svg.includes('👩‍💻'), 'ZWJ emoji status content should be preserved')
+    assert.ok(
+      svg.length > longLabel.length + longStatus.length,
+      'SVG should include generated markup around long text'
+    )
+  })
+})
+
+test('handles finite unusual scale and iconWidth values without invalid dimensions', () => {
+  withDeterministicRandom(() => {
+    for (const params of [
+      { label: 'scale-zero', status: 'ok', scale: 0 },
+      { label: 'scale-fraction', status: 'ok', scale: 0.25 },
+      { label: 'icon-zero', status: 'ok', icon: icons.chrome, iconWidth: 0 },
+      { label: 'icon-fraction', status: 'ok', icon: icons.chrome, iconWidth: 1.5 },
+      { label: 'icon-large', status: 'ok', icon: icons.chrome, iconWidth: 1000, scale: 2 },
+    ]) {
+      const svg = badgen(params)
+
+      assertSvgDimensionsAreFinite(svg)
+      if (params.icon) getEmbeddedImageHref(svg)
+    }
+  })
+})
+
+test('rejects non-finite scale and iconWidth values', () => {
+  for (const params of [
+    { status: 'ok', scale: Number.NaN },
+    { status: 'ok', scale: Number.POSITIVE_INFINITY },
+    { label: 'icon', status: 'ok', icon: icons.chrome, iconWidth: Number.NaN },
+    { label: 'icon', status: 'ok', icon: icons.chrome, iconWidth: Number.POSITIVE_INFINITY },
+  ]) {
+    assert.throws(() => badgen(params), TypeError)
+  }
+})
+
+test('rejects non-string icon values before rendering', () => {
+  assert.throws(
+    () => badgen({ label: 'icon', status: 'safe', icon: {} }),
+    TypeError
+  )
 })
 
 test('generate bare badge with { status }', () => {
