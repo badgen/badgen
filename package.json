@@ -34,9 +34,9 @@
     "pack:check": "npm pack --dry-run"
   },
   "devDependencies": {
-    "@types/node": "^25.6.2",
+    "@types/node": "^26.1.1",
     "benchmark": "^2.1.4",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite": "^8.0.11"
   }
 }
